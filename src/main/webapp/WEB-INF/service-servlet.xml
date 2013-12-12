@@ -7,6 +7,8 @@
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"> 
           
-<annotation-driven />
+	<annotation-driven />
     
-<context:component-scan base-package="id.ac.its.SimplePOS2013.Gudang.ServiceServer" />
+	<context:component-scan base-package="id.ac.its.SimplePOS2013.Gudang.ServiceServer" />
+
+</beans:beans>
