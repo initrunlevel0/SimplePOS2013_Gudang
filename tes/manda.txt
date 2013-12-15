@@ -1,0 +1,4 @@
+1. Penambahan atribut untuk entitas Stok Toko
+2. Memberikan tipe data yang dibutuhkan
+3. Menambahkan anotasi ManyToOne pada sisi StokToko (terdapat idBarang dan idToko yang menjadi FK dari entitas Barang dan Toko, sehingga perlu ada deklarasi relasi)
+4. Penambahan setter dan getter method
