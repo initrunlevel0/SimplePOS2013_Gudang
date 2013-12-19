@@ -11,7 +11,11 @@
 	
 	<!-- Enables the Spring MVC @Controller programming model -->
 	<annotation-driven />
-
+	<bean sid="transactionManager"
+        class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory" />
+	</bean>  
+	
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
 	<resources mapping="/resources/**" location="/resources/" />
 
@@ -21,8 +25,8 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-	<context:component-scan base-package="id.ac.its.SimplePOS2013.Gudang.BackOffice" />
 	
+	<context:component-scan base-package="id.ac.its.SimplePOS2013.Gudang.BackOffice" />
 	
 	
 </beans:beans>
