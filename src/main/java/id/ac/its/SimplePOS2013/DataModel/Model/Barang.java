@@ -15,7 +15,6 @@ import javax.persistence.Table;
 public class Barang {
     
 	@Id
-	@GeneratedValue
 	@Column(name="ID_BARANG")
 	private String idBarang;
 	
