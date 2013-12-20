@@ -25,8 +25,8 @@ public class Pelanggan {
 	@Column(name="TELEPON")
 	private String telepon;
 	
-	@OneToMany(mappedBy="PELANGGAN")
-		private Set<Transaksi> transaksi;
+	@OneToMany(mappedBy="pelanggan")
+    private Set<Transaksi> transaksi;
 	
 
 	public Pelanggan(){

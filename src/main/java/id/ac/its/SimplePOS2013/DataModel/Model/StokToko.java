@@ -17,7 +17,7 @@ public class StokToko {
 	
 	@ManyToOne
 	@JoinColumn(name="ID_TOKO")
-	private Toko idToko; 
+	private Toko toko; 
 	
 	@ManyToOne
 	@JoinColumn(name="ID_BARANG")
@@ -40,8 +40,8 @@ public class StokToko {
 		this.idBarang = idBarang;
 	}
 	 
-	 public void setIdToko(Toko idToko) {
-		this.idToko = idToko;
+	 public void setToko(Toko toko) {
+		this.toko = toko;
 	}
 	 
 	 public void setIdStokToko(String idStokToko) {
@@ -56,8 +56,8 @@ public class StokToko {
 		return idBarang;
 	}
 	 
-	 public Toko getIdToko() {
-		return idToko;
+	 public Toko getToko() {
+		return toko;
 	}
 	 
 	 public String getIdStokToko() {
