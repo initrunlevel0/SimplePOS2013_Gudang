@@ -10,25 +10,24 @@ import id.ac.its.SimplePOS2013.DataModel.Model.PegawaiGudang;
 public class PegawaiGudangImplService implements PegawaiGudangService {
 	
 	@Autowired
-	private BaseDAO<PegawaiGudang, String> besDao;
+	private BaseDAO<PegawaiGudang, String> baseDAO;
 
 	@Override
-	public void tambahPegawaiGudang(PegawaiGudang pegawaigudang) {
-		besDao.add(pegawaigudang);
+	public void tambahPegawaiGudang(PegawaiGudang pegawaiGudang) {
+		baseDAO.add(pegawaiGudang);
 		
 	}
 
 	@Override
-	public void suntingDataPegawaiGudang(PegawaiGudang pegawaigudang) {
-		besDao.update(pegawaigudang);
+	public void suntingDataPegawaiGudang(PegawaiGudang pegawaiGudang) {
+		baseDAO.update(pegawaiGudang);
 
-		
 	}
 
 	@Override
-	public boolean login(String idPegawai, String Password) {
-		
-		return false;
+	public void login(PegawaiGudang pegawaiGudang, String query) {
+		// TODO Auto-generated method stub
+		baseDAO.doQuery(query, PegawaiGudang.class);
 	}
 	
 	

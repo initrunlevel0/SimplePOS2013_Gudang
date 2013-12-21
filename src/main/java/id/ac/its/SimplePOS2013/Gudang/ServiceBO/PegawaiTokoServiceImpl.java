@@ -8,21 +8,24 @@ import id.ac.its.SimplePOS2013.DataModel.Model.PegawaiToko;
 public class PegawaiTokoServiceImpl implements PegawaiTokoService {
 
 	@Autowired
-	private BaseDAO<PegawaiToko, String> baseDao;
+	private BaseDAO<PegawaiToko, String> baseDAO;
 
 	@Override
-	public void tambahPegawaiToko(PegawaiToko pegawaitoko) {
-		baseDao.add(pegawaitoko);
+	public void tambahPegawaiToko(PegawaiToko pegawaiToko) {
+		baseDAO.add(pegawaiToko);
 		
 	}
+
 	@Override
-	public void suntingDataPegawaiGudang(String idPegawaiGudang){
-		
+	public void suntingDataPegawaiToko(PegawaiToko pegawaiToko) {
+		// TODO Auto-generated method stub
+		baseDAO.update(pegawaiToko);
 	}
+
 	@Override
-	public boolean login(String idPegawai,String Password){
-		
-		
+	public void login(PegawaiToko pegawaiToko, String query) {
+		// TODO Auto-generated method stub
+		baseDAO.doQuery(query, PegawaiToko.class);
 	}
 
 }

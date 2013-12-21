@@ -17,9 +17,8 @@ public class StokTokoServiceImpl implements StokTokoService {
 	}
 
 	@Override
-	public void suntingStokPerToko(StokToko stokToko, String idStokToko) {
+	public void suntingStokPerToko(StokToko stokToko) {
 		// TODO Auto-generated method stub
-		this.cariStok(idStokToko);
 		baseDAO.update(stokToko);
 	}
 
