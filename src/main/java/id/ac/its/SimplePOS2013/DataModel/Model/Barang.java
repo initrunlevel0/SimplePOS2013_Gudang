@@ -33,7 +33,7 @@ public class Barang {
 	@Column(name="TANGGAL_KADALUARSA")
 	private Date tanggalKadaluarsa;
 	
-	@OneToMany(mappedBy="barang")
+	@OneToMany(mappedBy="idBarang")
 	private Set<StokToko> stokToko;
 	
 	public Barang(){

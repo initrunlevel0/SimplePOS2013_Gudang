@@ -5,7 +5,7 @@ public interface BarangService {
 
     void tambahBarang(Barang barang);
     Barang ambilBarangId(String idBarang);
-    void tambahStokBarang(String idBarang);
-    void suntingBarang(String idBarang);
+    void tambahStokBarang(String idBarang, int jumlahBarang);
+    void suntingBarang(Barang barang);
 
 }

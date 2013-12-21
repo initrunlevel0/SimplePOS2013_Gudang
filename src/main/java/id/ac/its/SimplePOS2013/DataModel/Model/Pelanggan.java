@@ -34,7 +34,7 @@ public class Pelanggan {
 	}
 	
 	
-	public Pelanggan(String idPelanggan, String namaPelanggan, String alamatPelanggan, String Telepon){
+	public Pelanggan(String idPelanggan, String namaPelanggan, String alamatPelanggan, String telepon){
 		this.idPelanggan = idPelanggan;
 		this.namaPelanggan = namaPelanggan;
 		this.alamatPelanggan = alamatPelanggan;
@@ -46,15 +46,15 @@ public class Pelanggan {
 		this.idPelanggan = idPelanggan;
 	}
 	 
-	 public void setnamaPelanggan(String namaPelanggan) {
+	 public void setNamaPelanggan(String namaPelanggan) {
 		this.namaPelanggan = namaPelanggan;
 	}
 	 
-	 public void setalamatPelanggan(String alamatPelanggan) {
+	 public void setAlamatPelanggan(String alamatPelanggan) {
 		this.alamatPelanggan = alamatPelanggan;
 	}
 	  
-	 public void settelepon(String telepon){
+	 public void setTelepon(String telepon){
 		 this.telepon = telepon;
 	 }
 	 
