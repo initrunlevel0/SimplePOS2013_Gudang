@@ -40,14 +40,9 @@ public class HomeController {
 		String formattedDate = dateFormat.format(date);
 		
 		model.addAttribute("serverTime", formattedDate );
-		Barang barang = new Barang();
-		barang.setIdBarang("2");
-		barang.setNamaBarang("top");
-		barang.setHargaBeli(1000);
-		barang.setHargaJual(1200);
-		//barangService.tambahBarang(barang);
-		Barang brg = barangService.ambilBarangId("1");
-		barangService.hapusBarang("1");
+		
+		
+		
 		return "home";
 	}
 	
