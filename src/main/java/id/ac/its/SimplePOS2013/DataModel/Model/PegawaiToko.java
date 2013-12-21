@@ -34,7 +34,7 @@ public class PegawaiToko {
 	@Column (name ="GAJI_PEGAWI_TOKO")
 	private int GajiPegawaiToko; 
 
-	@OneToMany (mappedBy="PegawaiToko")
+	@OneToMany (mappedBy="pegawaiToko")
 	private Set<Transaksi> transaksi;
 
 
