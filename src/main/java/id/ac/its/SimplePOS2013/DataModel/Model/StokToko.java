@@ -21,7 +21,7 @@ public class StokToko {
 	
 	@ManyToOne
 	@JoinColumn(name="ID_BARANG")
-	private Barang idBarang; 
+	private Barang barang; 
 	
 	@Column(name="STOK_PER_TOKO")
 	private Integer stokPerToko;
@@ -29,42 +29,46 @@ public class StokToko {
 	public StokToko(){
 		
 	}
-	
-	public StokToko(String idStokToko, Integer stokPerToko){
+
+	public StokToko(String idStokToko, Toko toko, Barang barang,
+			Integer stokPerToko) {
 		this.idStokToko = idStokToko;
-		this.stokPerToko = stokPerToko;
-	}
-	
-	//setter and getter method
-	 public void setIdBarang(Barang idBarang) {
-		this.idBarang = idBarang;
-	}
-	 
-	 public void setToko(Toko toko) {
 		this.toko = toko;
-	}
-	 
-	 public void setIdStokToko(String idStokToko) {
-		this.idStokToko = idStokToko;
-	}
-	 
-	 public void setStokPerToko(Integer stokPerToko) {
+		this.barang = barang;
 		this.stokPerToko = stokPerToko;
 	}
-	  
-	 public Barang getIdBarang() {
-		return idBarang;
-	}
-	 
-	 public Toko getToko() {
-		return toko;
-	}
-	 
-	 public String getIdStokToko() {
+
+	public String getIdStokToko() {
 		return idStokToko;
 	}
-	 
-	 public Integer getStokPerToko() {
+
+	public void setIdStokToko(String idStokToko) {
+		this.idStokToko = idStokToko;
+	}
+
+	public Toko getToko() {
+		return toko;
+	}
+
+	public void setToko(Toko toko) {
+		this.toko = toko;
+	}
+
+	public Barang getBarang() {
+		return barang;
+	}
+
+	public void setBarang(Barang barang) {
+		this.barang = barang;
+	}
+
+	public Integer getStokPerToko() {
 		return stokPerToko;
 	}
+
+	public void setStokPerToko(Integer stokPerToko) {
+		this.stokPerToko = stokPerToko;
+	}
+	
+	
 }

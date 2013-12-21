@@ -38,45 +38,38 @@ public class Toko {
 		this.uangToko = uangToko;
 	}
 	
-
-
-
-
-
 	@OneToMany(mappedBy="toko")
 	private Set<StokToko> stokPerToko;
+	
+	@OneToMany(mappedBy="toko")
+	private Set<PegawaiToko> pegawaiToko;
+	
+	@OneToMany(mappedBy="toko")
+	private Set<Transaksi> transaksi;
+	
 	public String getIdToko() {
 		return idToko;
 	}
 
-	@OneToMany(mappedBy="toko")
-	private Set<PegawaiToko> pegawaiToko;
 	public String namaToko() {
 		return namaToko;
 	}
-
-	@OneToMany(mappedBy="toko")
-	private Set<Transaksi> transaksi;
+	
 	public String alamatToko() {
 		return alamatToko;
 	}
-
 	
 	public Integer uangToko() {
 		return uangToko;
-	
 	}
-	
+
 	public Toko(){
-			
 	}
-	
-	
 	public Toko(String idToko, String namaToko, String alamatToko, Integer uangToko){
-		this.idToko = idToko;
-		this.namaToko = namaToko;
-		this.alamatToko = alamatToko;
-		this.uangToko = uangToko;
-	}
+			this.idToko = idToko;
+			this.namaToko = namaToko;
+			this.alamatToko = alamatToko;
+			this.uangToko = uangToko;
+		}
 		
 	}
