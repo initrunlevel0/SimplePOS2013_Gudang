@@ -33,50 +33,56 @@ public class PegawaiGudang {
 	public PegawaiGudang(){
 		
 	}
-	
-	public PegawaiGudang(String idPegawaiGudang, String namaPegawaiGudang, String alamatPegawaiGudang,String teleponPegawaiGudang ,int gajiPegawaiGudang){
+
+	public PegawaiGudang(String idPegawaiGudang, String namaPegawaiGudang,
+			String alamatPegawaiGudang, String teleponPegawaiGudang,
+			int gajiPegawaiGudang) {
 		this.idPegawaiGudang = idPegawaiGudang;
 		this.namaPegawaiGudang = namaPegawaiGudang;
-		this.alamatPegawaiGudang= alamatPegawaiGudang;
-		this.teleponPegawaiGudang= teleponPegawaiGudang;
+		this.alamatPegawaiGudang = alamatPegawaiGudang;
+		this.teleponPegawaiGudang = teleponPegawaiGudang;
 		this.gajiPegawaiGudang = gajiPegawaiGudang;
 	}
 
-	//setter and getter method
+	public String getIdPegawaiGudang() {
+		return idPegawaiGudang;
+	}
+
+	public void setIdPegawaiGudang(String idPegawaiGudang) {
+		this.idPegawaiGudang = idPegawaiGudang;
+	}
+
+	public String getNamaPegawaiGudang() {
+		return namaPegawaiGudang;
+	}
+
+	public void setNamaPegawaiGudang(String namaPegawaiGudang) {
+		this.namaPegawaiGudang = namaPegawaiGudang;
+	}
+
+	public String getAlamatPegawaiGudang() {
+		return alamatPegawaiGudang;
+	}
+
+	public void setAlamatPegawaiGudang(String alamatPegawaiGudang) {
+		this.alamatPegawaiGudang = alamatPegawaiGudang;
+	}
+
+	public String getTeleponPegawaiGudang() {
+		return teleponPegawaiGudang;
+	}
+
+	public void setTeleponPegawaiGudang(String teleponPegawaiGudang) {
+		this.teleponPegawaiGudang = teleponPegawaiGudang;
+	}
+
+	public int getGajiPegawaiGudang() {
+		return gajiPegawaiGudang;
+	}
+
+	public void setGajiPegawaiGudang(int gajiPegawaiGudang) {
+		this.gajiPegawaiGudang = gajiPegawaiGudang;
+	}
 	
-		public void setIdPegawaiGudang(String idPegawaiGudang) {
-			this.idPegawaiGudang = idPegawaiGudang;
-		}
-		
-		public void setNamaPegawaiGudang(String namaPegawaiGudang) {
-			this.namaPegawaiGudang= namaPegawaiGudang;
-		}
-		
-		public void setAlamatPegawaiGudang(String alamatPegawaiGudang) {
-			this.alamatPegawaiGudang = alamatPegawaiGudang;
-		}
-		
-		public void setTeleponPegawaiGudang(String teleponPegawaiGudang) {
-			this.teleponPegawaiGudang = teleponPegawaiGudang;
-		}
-		
-		public void setGajiPegawaiGudang(int gajiPegawaiGudang) {
-			this.gajiPegawaiGudang= gajiPegawaiGudang;
-		}
-		
-		public String getIdPegawaiGudang(){
-			return idPegawaiGudang;
-		}
-		
-		public String getNamaPegawaiGudang(){
-			return namaPegawaiGudang;
-		}
-		
-		public String getAlamatPegawaiGudang(){
-			return alamatPegawaiGudang;
-		}
-		
-		public int getGajiPegawaiGudang(){
-			return gajiPegawaiGudang;
-		}
+	
 }

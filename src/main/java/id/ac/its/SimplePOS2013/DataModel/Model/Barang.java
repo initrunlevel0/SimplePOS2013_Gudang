@@ -5,13 +5,12 @@ import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Barang")
+@Table(name="BARANG")
 public class Barang {
     
 	@Id
@@ -33,14 +32,13 @@ public class Barang {
 	@Column(name="TANGGAL_KADALUARSA")
 	private Date tanggalKadaluarsa;
 	
-	@OneToMany(mappedBy="idBarang")
+	@OneToMany(mappedBy="barang")
 	private Set<StokToko> stokToko;
 	
 	public Barang(){
 	
 	}
-	
-	//Getter and Setter methods
+
 	public String getIdBarang() {
 		return idBarang;
 	}
@@ -88,4 +86,25 @@ public class Barang {
 	public void setTanggalKadaluarsa(Date tanggalKadaluarsa) {
 		this.tanggalKadaluarsa = tanggalKadaluarsa;
 	}
+
+	public Set<StokToko> getStokToko() {
+		return stokToko;
+	}
+
+	public void setStokToko(Set<StokToko> stokToko) {
+		this.stokToko = stokToko;
+	}
+
+	public Barang(String idBarang, String namaBarang, int hargaBeli,
+			int hargaJual, int stokTotalBarang, Date tanggalKadaluarsa,
+			Set<StokToko> stokToko) {
+		this.idBarang = idBarang;
+		this.namaBarang = namaBarang;
+		this.hargaBeli = hargaBeli;
+		this.hargaJual = hargaJual;
+		this.stokTotalBarang = stokTotalBarang;
+		this.tanggalKadaluarsa = tanggalKadaluarsa;
+		this.stokToko = stokToko;
+	}
+	
 }
