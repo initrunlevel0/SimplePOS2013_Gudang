@@ -23,24 +23,24 @@ public class Transaksi {
 	
 	@ManyToOne
 	@JoinColumn(name="ID_PEGAWAI")
-	private String idPegawai;
+	private PegawaiToko pegawaiToko;
 	
 	@ManyToOne
 	@JoinColumn(name="ID_TOKO")
 	private Toko toko;
 	
-	@Column(name="TANGAL")
+	@Column(name="TANGGAL")
 	private Date tanggal; 
 	
 	public Transaksi(){
 		
 	}
 
-	public Transaksi(String idTransaksi, Pelanggan Pelanggan, PegawaiToko pegawai,
+	public Transaksi(String idTransaksi, Pelanggan Pelanggan, PegawaiToko pegawaiToko,
 			Toko toko, Date tanggal) {
 		this.idTransaksi = idTransaksi;
 		this.pelanggan = pelanggan;
-		this.pegawaiToko = pegawai;
+		this.pegawaiToko = pegawaiToko;
 		this.toko = toko;
 		this.tanggal = tanggal;
 	}
@@ -53,20 +53,20 @@ public class Transaksi {
 		this.idTransaksi = idTransaksi;
 	}
 
-	public String getIdPelanggan() {
-		return idPelanggan;
+	public Pelanggan getPelanggan() {
+		return pelanggan;
 	}
 
-	public void setIdPelanggan(String idPelanggan) {
-		this.idPelanggan = idPelanggan;
+	public void setPelanggan(Pelanggan pelanggan) {
+		this.pelanggan = pelanggan;
 	}
 
-	public String getIdPegawai() {
-		return idPegawai;
+	public PegawaiToko getPegawaiToko() {
+		return pegawaiToko;
 	}
 
-	public void setIdPegawai(String idPegawai) {
-		this.idPegawai = idPegawai;
+	public void setPegawaiToko(PegawaiToko pegawaiToko) {
+		this.pegawaiToko = pegawaiToko;
 	}
 
 	public Toko getToko() {
@@ -84,8 +84,7 @@ public class Transaksi {
 	public void setTanggal(Date tanggal) {
 		this.tanggal = tanggal;
 	}
-	
-	
+
 	
 	
 }

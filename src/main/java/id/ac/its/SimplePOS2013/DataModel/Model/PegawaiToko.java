@@ -19,8 +19,6 @@ public class PegawaiToko {
 	@Column(name= "ID_PEGAWAI")
 	private String idPegawai;
 
-	@Id
-	@GeneratedValue
 	@Column(name= "ID_TOKO")
 	private String idToko;
 
