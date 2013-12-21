@@ -34,7 +34,7 @@ public class BaseDAOImpl<T, U> implements BaseDAO<T, U> {
 		if(obj != null) {
 			em.remove(obj);
 		}
-		*/
+		
 		
 	}
 

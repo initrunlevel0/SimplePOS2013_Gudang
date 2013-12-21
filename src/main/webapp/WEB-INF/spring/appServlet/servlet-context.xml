@@ -25,7 +25,7 @@
 	</beans:bean>
 	
 	
-	<context:component-scan base-package="id.ac.its.SimplePOS2013.Gudang.BackOffice" />
+	<context:component-scan base-package="id.ac.its.SimplePOS2013" />
 	<!--  Data Source Area by Wirama -->
 	<beans:bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
 	<beans:bean id="dataSource1" class="org.springframework.jdbc.datasource.DriverManagerDataSource" >
