@@ -24,14 +24,14 @@ public class BarangServiceImpl implements BarangService {
 	}
 
 	@Override
-	public void tambahStokBarang(String idBarang) {
-		// TODO Auto-generated method stub
+	public void tambahStokBarang(String idBarang, int jumlahBarang) {
+		
 		
 	}
 
 	@Override
-	public void suntingBarang(String idBarang) {
-		// TODO Auto-generated method stub
+	public void suntingBarang(Barang barang) {
+		baseDao.update(barang);
 		
 	}
 	
