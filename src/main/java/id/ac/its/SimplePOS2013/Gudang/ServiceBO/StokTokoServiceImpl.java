@@ -1,6 +1,7 @@
 package id.ac.its.SimplePOS2013.Gudang.ServiceBO;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
 import id.ac.its.SimplePOS2013.DataModel.DAO.BaseDAO;
 import id.ac.its.SimplePOS2013.DataModel.Model.StokToko;
 
@@ -21,17 +22,18 @@ public class StokTokoServiceImpl implements StokTokoService {
 		baseDAO.update(stokToko);
 	}
 
-	@Override
-	public void tambahStokToko(String idBarang) {
-		// TODO Auto-generated method stub
-		
-	}
 
 	@Override
 	public StokToko cariStok(String idStokToko) {
 		// TODO Auto-generated method stub
 		
 		return null;
+	}
+
+	@Override
+	public void tambahStokToko(String idBarang, int JumlahBarang) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 
