@@ -17,24 +17,16 @@ public class StokTokoServiceImpl implements StokTokoService {
 	}
 
 	@Override
-	public void suntingStokPerToko(StokToko stokToko) {
+	public void suntingStokPerToko(StokToko stokToko, String idStokToko) {
 		// TODO Auto-generated method stub
+		this.cariStok(idStokToko);
 		baseDAO.update(stokToko);
 	}
-
 
 	@Override
 	public StokToko cariStok(String idStokToko) {
 		// TODO Auto-generated method stub
-		
-		return null;
+		return baseDAO.view(idStokToko, StokToko.class);
 	}
-
-	@Override
-	public void tambahStokToko(String idBarang, int JumlahBarang) {
-		// TODO Auto-generated method stub
-		
-	}
-	
 
 }
