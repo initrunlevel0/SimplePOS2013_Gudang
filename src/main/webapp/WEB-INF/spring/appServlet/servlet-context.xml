@@ -30,7 +30,7 @@
 	<beans:bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
 	<beans:bean id="dataSource1" class="org.springframework.jdbc.datasource.DriverManagerDataSource" >
 		<beans:property name="driverClassName"><beans:value>com.mysql.jdbc.Driver</beans:value></beans:property>
-		<beans:property name="url"><beans:value>jdbc:mysql//localhost//simplepos</beans:value></beans:property>
+		<beans:property name="url"><beans:value>jdbc:mysql://localhost:3306/simplepos</beans:value></beans:property>
 		<beans:property name="username"><beans:value>root</beans:value></beans:property>
 		<beans:property name="password"><beans:value>root</beans:value></beans:property>
 	</beans:bean>

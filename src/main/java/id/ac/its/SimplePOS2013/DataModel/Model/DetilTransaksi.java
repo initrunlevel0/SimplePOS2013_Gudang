@@ -17,11 +17,11 @@ public class DetilTransaksi {
 	
 	@ManyToOne
 	@JoinColumn(name="ID_TRANSAKSI")
-	private Transaksi idTransaksi;
+	private Transaksi transaksi;
 	
 	@ManyToOne
 	@JoinColumn(name="ID_BARANG")
-	private Barang idBarang;
+	private Barang barang;
 	
 	@Column
 	private int uangBayar;
@@ -29,12 +29,15 @@ public class DetilTransaksi {
 	@Column
 	private int uangKembalian;
 
-	public DetilTransaksi(String idDetailTransaksi, Transaksi idTransaksi,
-			Barang idBarang, int uangBayar, int uangKembalian) {
+	public DetilTransaksi(){
+		
+	}
+	public DetilTransaksi(String idDetailTransaksi, Transaksi transaksi,
+			Barang barang, int uangBayar, int uangKembalian) {
 		super();
 		this.idDetailTransaksi = idDetailTransaksi;
-		this.idTransaksi = idTransaksi;
-		this.idBarang = idBarang;
+		this.transaksi = transaksi;
+		this.barang = barang;
 		this.uangBayar = uangBayar;
 		this.uangKembalian = uangKembalian;
 	}
@@ -47,20 +50,20 @@ public class DetilTransaksi {
 		this.idDetailTransaksi = idDetailTransaksi;
 	}
 
-	public Transaksi getIdTransaksi() {
-		return idTransaksi;
+	public Transaksi getTransaksi() {
+		return transaksi;
 	}
 
-	public void setIdTransaksi(Transaksi idTransaksi) {
-		this.idTransaksi = idTransaksi;
+	public void setTransaksi(Transaksi transaksi) {
+		this.transaksi = transaksi;
 	}
 
-	public Barang getIdBarang() {
-		return idBarang;
+	public Barang getBarang() {
+		return barang;
 	}
 
-	public void setIdBarang(Barang idBarang) {
-		this.idBarang = idBarang;
+	public void setBarang(Barang barang) {
+		this.barang = barang;
 	}
 
 	public int getUangBayar() {
@@ -78,7 +81,5 @@ public class DetilTransaksi {
 	public void setUangKembalian(int uangKembalian) {
 		this.uangKembalian = uangKembalian;
 	}
-
-	
 	
 }

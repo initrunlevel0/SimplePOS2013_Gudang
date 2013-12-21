@@ -3,15 +3,21 @@ package id.ac.its.SimplePOS2013.DataModel.Model;
 import java.util.Set;
 
 
+
+
+
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table (name = "PegawaiToko")
+@Table (name = "PEGAWAI_TOKO")
 public class PegawaiToko {
 
 	@Id
@@ -19,20 +25,21 @@ public class PegawaiToko {
 	@Column(name= "ID_PEGAWAI")
 	private String idPegawai;
 
-	@Column(name= "ID_TOKO")
-	private String idToko;
+	@ManyToOne
+	@JoinColumn(name="ID_TOKO")
+	private Toko toko;
 
 	@Column (name = "NAMA_PEGAWAI_TOKO")
-	private String NamaPegawaiToko;
+	private String namaPegawaiToko;
 
 	@Column (name ="ALAMAT_PEGAWAI_TOKO")
-	private String AlamatPegawaiToko;
+	private String alamatPegawaiToko;
 
 	@Column (name= "TELEPON_PEGAWAI_TOKO")
-	private String TeleponPegawaiToko;
+	private String neleponPegawaiToko;
 
 	@Column (name ="GAJI_PEGAWI_TOKO")
-	private int GajiPegawaiToko; 
+	private int gajiPegawaiToko; 
 
 	@OneToMany (mappedBy="pegawaiToko")
 	private Set<Transaksi> transaksi;
@@ -44,9 +51,27 @@ public class PegawaiToko {
 
 	}
 
+
+
+	public PegawaiToko(String idPegawai, Toko toko, String namaPegawaiToko,
+			String nlamatPegawaiToko, String neleponPegawaiToko,
+			int gajiPegawaiToko, Set<Transaksi> transaksi) {
+		super();
+		this.idPegawai = idPegawai;
+		this.toko = toko;
+		this.namaPegawaiToko = namaPegawaiToko;
+		this.alamatPegawaiToko = nlamatPegawaiToko;
+		this.neleponPegawaiToko = neleponPegawaiToko;
+		this.gajiPegawaiToko = gajiPegawaiToko;
+		this.transaksi = transaksi;
+	}
+
+
+
 	public String getIdPegawai() {
 		return idPegawai;
 	}
+
 
 
 	public void setIdPegawai(String idPegawai) {
@@ -55,52 +80,76 @@ public class PegawaiToko {
 
 
 
-	public String getIdToko() {
-		return idToko;
+	public Toko getToko() {
+		return toko;
 	}
 
 
-	public void setIdToko(String idToko) {
-		this.idToko = idToko;
+
+	public void setToko(Toko toko) {
+		this.toko = toko;
 	}
+
 
 
 	public String getNamaPegawaiToko() {
-		return NamaPegawaiToko;
+		return namaPegawaiToko;
 	}
+
 
 
 	public void setNamaPegawaiToko(String namaPegawaiToko) {
-		NamaPegawaiToko = namaPegawaiToko;
+		this.namaPegawaiToko = namaPegawaiToko;
 	}
 
 
-	public String getAlamatPegawaiToko() {
-		return AlamatPegawaiToko;
+
+	public String getNlamatPegawaiToko() {
+		return alamatPegawaiToko;
 	}
 
 
-	public void setAlamatPegawaiToko(String alamatPegawaiToko) {
-		AlamatPegawaiToko = alamatPegawaiToko;
+
+	public void setNlamatPegawaiToko(String nlamatPegawaiToko) {
+		this.alamatPegawaiToko = nlamatPegawaiToko;
 	}
 
 
-	public String getTeleponPegawaiToko() {
-		return TeleponPegawaiToko;
+
+	public String getNeleponPegawaiToko() {
+		return neleponPegawaiToko;
 	}
 
 
-	public void setTeleponPegawaiToko(String teleponPegawaiToko) {
-		TeleponPegawaiToko = teleponPegawaiToko;
+
+	public void setNeleponPegawaiToko(String neleponPegawaiToko) {
+		this.neleponPegawaiToko = neleponPegawaiToko;
 	}
+
 
 
 	public int getGajiPegawaiToko() {
-		return GajiPegawaiToko;
+		return gajiPegawaiToko;
 	}
+
 
 
 	public void setGajiPegawaiToko(int gajiPegawaiToko) {
-		GajiPegawaiToko = gajiPegawaiToko;
+		this.gajiPegawaiToko = gajiPegawaiToko;
 	}
+
+
+
+	public Set<Transaksi> getTransaksi() {
+		return transaksi;
+	}
+
+
+
+	public void setTransaksi(Set<Transaksi> transaksi) {
+		this.transaksi = transaksi;
+	}
+
+	
+	
 }
