@@ -9,6 +9,6 @@
           
 	<annotation-driven />
     
-	<context:component-scan base-package="id.ac.its.SimplePOS2013.Gudang.ServiceServer" />
+	<context:component-scan base-package="id.ac.its.SimplePOS2013.Gudang.ServiceFO" />
 
 </beans:beans>
