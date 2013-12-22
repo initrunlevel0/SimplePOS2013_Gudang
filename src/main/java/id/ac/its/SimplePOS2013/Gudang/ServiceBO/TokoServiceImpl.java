@@ -22,7 +22,7 @@ public class TokoServiceImpl implements TokoService{
 	}
 	
 	@Override
-	public int hitungPemasukanToko(String idToko, String idTransaksi){
+	public int hitungPemasukan(String idToko, String idTransaksi){
 		//gak ngerti ini
 		int pemasukan=0;
 		
@@ -30,7 +30,7 @@ public class TokoServiceImpl implements TokoService{
 	}
 	
 	@Override
-	public int hitungPengeluaranToko(String idPegawaiToko, String idStokPerToko){
+	public int hitungPengeluaran(String idPegawaiToko, String idStokPerToko){
 		int pengeluaran=0;
 		
 		return pengeluaran;
