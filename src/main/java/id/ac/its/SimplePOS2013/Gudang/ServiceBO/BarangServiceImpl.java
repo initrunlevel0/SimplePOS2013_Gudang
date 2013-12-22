@@ -1,5 +1,7 @@
 package id.ac.its.SimplePOS2013.Gudang.ServiceBO;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -32,7 +34,16 @@ public class BarangServiceImpl implements BarangService {
 	@Override
 	public void suntingBarang(Barang barang) {
 		baseDao.update(barang);
-		
 	}
 	
+	//daftarBarang belum terdokumentasi
+	@Override
+	public List<Barang> daftarBarang(){
+		return baseDao.listAll(Barang.class);
+	}
+	
+	@Override
+	public void hapusBarang(String idBarang){
+		baseDao.delete(idBarang, Barang.class);
+	}
 }

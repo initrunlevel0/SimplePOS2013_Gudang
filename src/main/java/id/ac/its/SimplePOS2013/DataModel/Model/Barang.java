@@ -39,6 +39,21 @@ public class Barang {
 	
 	}
 
+		public Barang(String idBarang, String namaBarang, int hargaBeli,
+			int hargaJual, int stokTotalBarang, Date tanggalKadaluarsa,
+			Set<StokToko> stokToko) {
+		super();
+		this.idBarang = idBarang;
+		this.namaBarang = namaBarang;
+		this.hargaBeli = hargaBeli;
+		this.hargaJual = hargaJual;
+		this.stokTotalBarang = stokTotalBarang;
+		this.tanggalKadaluarsa = tanggalKadaluarsa;
+		this.stokToko = stokToko;
+	}
+
+
+
 	public String getIdBarang() {
 		return idBarang;
 	}
@@ -95,16 +110,5 @@ public class Barang {
 		this.stokToko = stokToko;
 	}
 
-	public Barang(String idBarang, String namaBarang, int hargaBeli,
-			int hargaJual, int stokTotalBarang, Date tanggalKadaluarsa,
-			Set<StokToko> stokToko) {
-		this.idBarang = idBarang;
-		this.namaBarang = namaBarang;
-		this.hargaBeli = hargaBeli;
-		this.hargaJual = hargaJual;
-		this.stokTotalBarang = stokTotalBarang;
-		this.tanggalKadaluarsa = tanggalKadaluarsa;
-		this.stokToko = stokToko;
-	}
 	
 }

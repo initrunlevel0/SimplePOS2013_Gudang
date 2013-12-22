@@ -29,8 +29,12 @@ public class DetilTransaksi {
 	@Column
 	private int uangKembalian;
 
+	public DetilTransaksi(){
+		
+	}
 	public DetilTransaksi(String idDetailTransaksi, Transaksi transaksi,
 			Barang barang, int uangBayar, int uangKembalian) {
+		super();
 		this.idDetailTransaksi = idDetailTransaksi;
 		this.transaksi = transaksi;
 		this.barang = barang;
@@ -77,6 +81,5 @@ public class DetilTransaksi {
 	public void setUangKembalian(int uangKembalian) {
 		this.uangKembalian = uangKembalian;
 	}
-
 	
 }
