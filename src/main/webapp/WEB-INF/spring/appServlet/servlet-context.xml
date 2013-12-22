@@ -24,6 +24,21 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
+	<beans:bean id="templateResolver" class="org.thymeleaf.templateresolver.ServletContextTemplateResolver">
+	  <beans:property name="prefix" value="/WEB-INF/view/" />
+	  <beans:property name="suffix" value=".html" />
+	  <beans:property name="templateMode" value="HTML5" />
+	  <beans:property name="cacheable" value="false" />
+	</beans:bean>
+	<beans:bean id="templateEngine" class="org.thymeleaf.spring3.SpringTemplateEngine">
+	  <beans:property name="templateResolver" ref="templateResolver" />
+	</beans:bean>
+	<beans:bean class="org.thymeleaf.spring3.view.ThymeleafViewResolver">
+	  <beans:property name="templateEngine" ref="templateEngine" />
+	  <beans:property name="order" value="1" />
+	  <beans:property name="viewNames" value="thymeleaf/*" />
+	</beans:bean>
+	
 	
 	<context:component-scan base-package="id.ac.its.SimplePOS2013" />
 	<!--  Data Source Area by Wirama -->

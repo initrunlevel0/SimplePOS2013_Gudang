@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class GudangHomeController {
 	@RequestMapping(value = "/gudang", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
-		return "haha";
+		return "tes";
 	}
 	
 }
