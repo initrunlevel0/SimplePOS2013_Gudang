@@ -10,7 +10,7 @@ import id.ac.its.SimplePOS2013.DataModel.Model.PegawaiToko;
 import id.ac.its.SimplePOS2013.DataModel.Model.Transaksi;
 import id.ac.its.SimplePOS2013.Gudang.ServiceBO.PegawaiTokoService;
 
-public class TransaksiTokoImpl implements TransaksiTokoService {
+public class TransaksiServiceFOImpl implements TransaksiServiceFO {
 
 	@Autowired
 	private BaseDAO<Transaksi, String> baseDAO;
