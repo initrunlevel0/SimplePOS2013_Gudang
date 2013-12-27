@@ -3,6 +3,7 @@
 <html>
   
   <head>
+  <div th:include="template::header"></div>
   <h1>Tambah Barang</h1>
     <title>New Page</title>
     <meta name="viewport" content="width=device-width"/>
@@ -13,32 +14,32 @@
   
   <body>
     <div class="container">
-      <form role="form">
+      <form action="#" th:action="@{/gudang/kelola_barang/tambah}" th:object="${barang}" method="post">
         <div class="form-group">
           <label for="exampleInputEmail1">ID Barang</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Masukkan ID"/>
+          <input type="text" class="form-control" th:field="*{idBarang}" placeholder="Masukkan ID"/>
         </div>
         <div class="form-group">
           <label for="exampleInputPassword1">Nama Barang</label>
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Masukkan Nama Barang"/>
+          <input type="text" class="form-control" th:field="*{namaBarang}" placeholder="Masukkan Nama Barang"/>
         </div>
         <div class="form-group">
           <label for="exampleInputPassword1">Harga Beli</label>
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Masukkan Harga Beli Barang"/>
+          <input type="text" class="form-control" th:field="*{hargaBeli}" placeholder="Masukkan Harga Beli Barang"/>
         </div>
         <div class="form-group">
           <label for="exampleInputPassword1">Harga Jual</label>
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Masukkan Harga Jual Barang"/>
+          <input type="text" class="form-control" th:field="*{hargaJual}" placeholder="Masukkan Harga Jual Barang"/>
         </div>
         <div class="form-group">
           <label for="exampleInputPassword1">Stok Total Barang</label>
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Masukkan Stok Total Barang"/>
+          <input type="text" class="form-control" th:field="*{stokTotalBarang}" placeholder="Masukkan Stok Total Barang"/>
         </div>
         <div class="form-group">
           <label for="exampleInputPassword1">Tanggal Kadaluarsa</label>
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Masukkan Tanggal Kadaluarsa"/>
+          <input type="text" class="form-control" th:field="*{tanggalKadaluarsa}" placeholder="Masukkan Tanggal Kadaluarsa"/>
         </div>
-        <button type="submit" class="btn btn-default">Submit</button>
+        <button type="submit" name="tambahBarang" class="btn btn-default">Submit</button>
       </form>
     </div>
   </body>
