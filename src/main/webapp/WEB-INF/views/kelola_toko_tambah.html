@@ -13,26 +13,27 @@
   
   <body>
     <div class="container">
-      <form role="form">
+    <form action="#" th:action="@{/gudang/kelola_toko/tambah}" th:object="${toko}" method="post">
         <div class="form-group">
           <label for="exampleInputEmail1">ID Toko</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Masukkan ID Toko">
+          <input type="text" class="form-control" th:field="*{idToko}" placeholder="Masukkan ID Toko">
         </div>
         <div class="form-group">
           <label for="exampleInputPassword1">Nama Toko</label>
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Masukkan Nama Toko">
+          <input type="text" class="form-control" th:field="*{namaToko}" placeholder="Masukkan Nama Toko">
         </div>
         <div class="form-group">
           <label for="exampleInputPassword1">Alamat Toko</label>
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Masukkan Alamat Toko">
+          <input type="text" class="form-control" th:field="*{alamatToko}" placeholder="Masukkan Alamat Toko">
         </div>
         
         <div class="form-group">
           <label for="exampleInputPassword1">Uang Toko</label>
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Masukkan Uang Toko">
+          <input type="text" class="form-control" th:field="*{uangToko}" placeholder="Masukkan Uang Toko">
         </div>
-        <button type="submit" class="btn btn-default">Submit</button>
+        <button type="submit" name="tambahToko" class="btn btn-default">Submit</button>
       </form>
     </div>
   </body>
+</html>
 
