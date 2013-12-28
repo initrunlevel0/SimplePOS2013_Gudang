@@ -24,43 +24,20 @@
         </thead>
         <tbody>
           <tr>
-            <td>1</td>
-            <td>Michael</td>
-            <td>
-            </td>
-            <td>
-            </td>
-            <td>
-            </td>
-            <td>           
-            </td>
-
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Jake</td>
-            <td>
-            </td>
-            <td>
-            </td>
-            <td>
-            </td>
-            <td>   
-            </td>
-          </tr>
-          <tr>
-            <td>
-            </td>
-            
+            <td th:text="${{sb.idToko}}"></td>
+            <td th:text="${sb.namaToko}"></td>
+            <td th:text="${sb.alamatToko}"></td>
+            <td th:text="${sb.uangToko}"></td>
           </tr>
         </tbody>
       </table>
-      
     </div>
   </body>
   
-  <center><footer>
+ <center>
+  <footer>
     <button type="button" class="btn btn-default">Tambah</button> <button type="button" class="btn btn-default">Sunting</button> <button type="button" class="btn btn-default">Hapus</button>
-  </footer></center>
+  </footer>
+</center>
 
 </html>
