@@ -1,11 +1,12 @@
 package id.ac.its.SimplePOS2013.Gudang.ServiceBO;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import id.ac.its.SimplePOS2013.DataModel.DAO.BaseDAO;
 import id.ac.its.SimplePOS2013.DataModel.Model.Toko;
 
-
+@Service
 public class TokoServiceImpl implements TokoService{
 	
 	@Autowired

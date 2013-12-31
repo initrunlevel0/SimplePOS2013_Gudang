@@ -14,7 +14,9 @@
 	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
 	
 	<!-- Enables the Spring MVC @Controller programming model -->
-	<annotation-driven /> 	
+	<context:component-scan base-package="id.ac.its.SimplePOS2013" />
+	<annotation-driven /> 
+		
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
 	<resources mapping="/resources/**" location="/resources/" />
 
@@ -37,14 +39,8 @@
 	  <beans:property name="suffix" value=".html" />
 	  <beans:property name="templateMode" value="HTML5" />
 	</beans:bean>
-	    
 	
-
 	
-	<context:component-scan base-package="id.ac.its.SimplePOS2013" />
-	
-		
-
 	<!--  Data Source Area by Wirama -->
 	<beans:bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
 	<beans:bean id="dataSource1" class="org.springframework.jdbc.datasource.DriverManagerDataSource" >
@@ -62,5 +58,7 @@
 		p:entityManagerFactory-ref="entityManagerFactory" />
 	
 	<tx:annotation-driven transaction-manager="transactionManager"/>
+	
+	
 	
 </beans:beans>

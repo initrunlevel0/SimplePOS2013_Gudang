@@ -3,11 +3,13 @@ package id.ac.its.SimplePOS2013.Gudang.ServiceBO;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import id.ac.its.SimplePOS2013.DataModel.DAO.BaseDAO;
 import id.ac.its.SimplePOS2013.DataModel.Model.PegawaiGudang;
 import id.ac.its.SimplePOS2013.DataModel.Model.PegawaiToko;
 
+@Service
 public class PegawaiTokoServiceImpl implements PegawaiTokoService {
 
 	@Autowired

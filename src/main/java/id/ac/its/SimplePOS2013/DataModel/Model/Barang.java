@@ -5,6 +5,7 @@ import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -32,7 +33,7 @@ public class Barang {
 	@Column(name="TANGGAL_KADALUARSA")
 	private Date tanggalKadaluarsa;
 	
-	@OneToMany(mappedBy="barang")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy="barang")
 	private Set<StokToko> stokToko;
 	
 	public Barang(){

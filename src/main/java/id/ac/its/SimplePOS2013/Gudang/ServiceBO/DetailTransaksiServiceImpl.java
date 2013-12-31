@@ -4,7 +4,9 @@ import id.ac.its.SimplePOS2013.DataModel.DAO.BaseDAO;
 import id.ac.its.SimplePOS2013.DataModel.Model.DetilTransaksi;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class DetailTransaksiServiceImpl implements DetailTransaksiService{
 	
 	@Autowired
