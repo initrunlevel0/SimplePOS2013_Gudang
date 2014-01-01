@@ -11,12 +11,12 @@
   </head>
   
   <body>
+   <div th:include="template::header"></div>
     <h1> Kelola Pegawai Toko</h1>
     <div class="container">
       <table class="table">
         <thead>
           <tr>
-            <th>#</th>
             <th>ID Toko</th>
             <th>Nama Pegawai Toko</th>
             <th>Alamat Pegawai Toko</th>
@@ -26,39 +26,16 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>Michael</td>
-            <td>
-            </td>
-            <td>
-            </td>
-            <td>
-            </td>
-            <td>           
-            </td>
-
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Jake</td>
-            <td>
-            </td>
-            <td>
-            </td>
-            <td>
-            </td>
-            <td>   
-            </td>
-          </tr>
-          <tr>
-            <td>
-            </td>
-            
+          <tr th:each="sb : ${daftarBarang}">
+            <td th:text="${{sb.idToko}}"></td>
+            <td th:text="${sb.namaPegawaiToko}"></td>
+            <td th:text="${sb.alamatPegawaiToko}"></td>
+            <td th:text="${sb.teleponPegawaiToko}"></td>
+            <td th:text="${sb.gajiPegawaiToko}"></td>
+            <td th:text="${sb.password}"></td>
           </tr>
         </tbody>
       </table>
-      
     </div>
   </body>
   
