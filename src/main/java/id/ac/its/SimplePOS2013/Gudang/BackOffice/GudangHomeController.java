@@ -21,22 +21,19 @@ public class GudangHomeController {
 	private PegawaiGudangService pegawaiGudangService;
 	
 	
-	@RequestMapping(value = "/gudang", method = RequestMethod.GET)
+	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 		return "tes";
 	}
 	
-	@RequestMapping(value="/gudang/login", method = RequestMethod.GET) 
-	public String loginGet(Model model) {
-		List<Barang> barang = new ArrayList<Barang>();
-		Barang b1 = new Barang();
-		Barang b2 = new Barang();
-		b1.setNamaBarang("Bengbeng");
-		b2.setNamaBarang("Bongbong");
-		barang.add(b1);
-		barang.add(b2);
-		
+	@RequestMapping(value="/login", method = RequestMethod.GET) 
+	public String login(Model model) {
 		return "login";
+	}
+	
+	@RequestMapping(value="/logout", method = RequestMethod.GET) 
+	public String logout(Model model) {
+		return "logout";
 	}
 	
 }

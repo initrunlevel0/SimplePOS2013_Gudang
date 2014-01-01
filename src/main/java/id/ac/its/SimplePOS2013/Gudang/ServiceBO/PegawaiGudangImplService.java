@@ -1,15 +1,23 @@
 package id.ac.its.SimplePOS2013.Gudang.ServiceBO;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.GrantedAuthorityImpl;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import id.ac.its.SimplePOS2013.DataModel.DAO.BaseDAO;
 import id.ac.its.SimplePOS2013.DataModel.Model.PegawaiGudang;
 
 @Service
-public class PegawaiGudangImplService implements PegawaiGudangService {
+public class PegawaiGudangImplService implements PegawaiGudangService, UserDetailsService {
 	
 	@Autowired
 	private BaseDAO<PegawaiGudang, String> baseDao;
@@ -42,6 +50,19 @@ public class PegawaiGudangImplService implements PegawaiGudangService {
 	@Override
 	public boolean login(String idPegawai, String Password) {
 		return false;
+	}
+
+	@Override
+	public UserDetails loadUserByUsername(String idPegawaiGudang)
+			throws UsernameNotFoundException {
+		PegawaiGudang dataPegawaiGudang = this.lihatDataPegawaiGudang(idPegawaiGudang);
+		if(dataPegawaiGudang == null) {
+			throw new UsernameNotFoundException(idPegawaiGudang);
+		}
+		List<GrantedAuthority> grantedAuthority = new ArrayList<GrantedAuthority>();
+		grantedAuthority.add(new GrantedAuthorityImpl("ROLE_USER"));
+		UserDetails user = new User(dataPegawaiGudang.getIdPegawaiGudang(), dataPegawaiGudang.getPassword(), true, true, true, true,  grantedAuthority);
+		return user;
 	}
 	
 	

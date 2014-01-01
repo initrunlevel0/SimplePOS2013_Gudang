@@ -11,17 +11,13 @@
         <intercept-url pattern="/login" access="permitAll" />
         <intercept-url pattern="/logout" access="permitAll" />
         <intercept-url pattern="/accessdenied" access="permitAll" />
-        <intercept-url pattern="/**" access="hasRole('ROLE_USER')" />
+        <intercept-url pattern="/gudang/**" access="hasRole('ROLE_USER')" />
         <form-login login-page="/login" default-target-url="/list" authentication-failure-url="/accessdenied" />
         <logout logout-success-url="/logout" />
     </http>
  
     <authentication-manager alias="authenticationManager">
-        <authentication-provider>
-            <user-service>
-                <user name="lokesh" password="password" authorities="ROLE_USER" />
-            </user-service>
-        </authentication-provider>
+        <authentication-provider user-service-ref="pegawaiGudangService" />
     </authentication-manager>
  
 </beans:beans>

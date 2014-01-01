@@ -29,6 +29,17 @@ public class PegawaiGudang {
 	@Column(name="GAJI_PEGAWAI_GUDANG")
 	private int gajiPegawaiGudang ;
 	
+	@Column(name="PASSWORD")
+	private String password;
+	
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
 	public PegawaiGudang(){
 		
 	}
