@@ -28,7 +28,7 @@
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>service</servlet-name>
-    <url-pattern>*.service</url-pattern>
+    <url-pattern>/kasir_service</url-pattern>
   </servlet-mapping>
   
   <filter>
