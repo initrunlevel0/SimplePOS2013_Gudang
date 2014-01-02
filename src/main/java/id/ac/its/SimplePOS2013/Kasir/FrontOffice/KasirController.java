@@ -6,6 +6,7 @@ import java.util.List;
 
 import id.ac.its.SimplePOS2013.DataModel.Model.Barang;
 import id.ac.its.SimplePOS2013.DataModel.Model.DetilTransaksi;
+import id.ac.its.SimplePOS2013.DataModel.Model.Struk;
 import id.ac.its.SimplePOS2013.Gudang.ServiceBO.BarangService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,10 +40,8 @@ public class KasirController {
 	// Format data sesuaikan domain Transaksi dan DetilTransaksi
 	// Wira masih bingung cara menggabungkan dua @RequestBody sebagai parameter)
 	@RequestMapping(value = "/kasir/proses_transaksi", method = RequestMethod.POST)
-	public @ResponseBody Boolean prosesTransaksi(@RequestBody List<DetilTransaksi> detilTransaksi) {
-		// STEP 1: Persisten sebuah data di tabel Transaksi
-		// STEP 2: Persisten setiap isi di detilTransaksi pada tabel DetilTransaksi
-		// STEP 3: Kurang data stok toko berdasarkan detilTransaksi
+	public @ResponseBody Boolean prosesTransaksi(@RequestBody Struk struk) {
+		
 		return true;
 	}
 	
