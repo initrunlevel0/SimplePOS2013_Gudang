@@ -1,3 +1,4 @@
+/* THIS IS OBSOLLATTEEE -- Wira */
 package id.ac.its.SimplePOS2013.Gudang.ServiceFO;
 
 import id.ac.its.SimplePOS2013.DataModel.Model.PegawaiToko;
