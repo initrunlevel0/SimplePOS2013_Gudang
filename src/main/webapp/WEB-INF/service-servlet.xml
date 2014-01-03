@@ -7,13 +7,13 @@
        xmlns:tx="http://www.springframework.org/schema/tx"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
                            http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd">
-  <context:component-scan base-package="id.ac.its.SimplePOS2013" />
-  <tx:annotation-driven /> 
+   
+   <bean id="kasirService" class="id.ac.its.SimplePOS2013.Gudang.ServiceFO.KasirServiceImpl" />
    <bean id="httpKasirService"
          class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter"
          p:service-ref="kasirService">
       <property name="serviceInterface">
-         <value>id.ac.its.SimplePOS2013.ServiceFO.KasirService</value>
+         <value>id.ac.its.SimplePOS2013.Gudang.ServiceFO.KasirService</value>
       </property>
    </bean>
 
