@@ -31,6 +31,11 @@ public class GudangHomeController {
 		return "login";
 	}
 	
+	@RequestMapping(value="/accessdenied", method = RequestMethod.GET) 
+	public String denied(Model model) {
+		return "accessdenied";
+	}
+	
 	@RequestMapping(value="/logout", method = RequestMethod.GET) 
 	public String logout(Model model) {
 		return "logout";

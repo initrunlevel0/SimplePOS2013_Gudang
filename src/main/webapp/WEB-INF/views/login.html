@@ -53,13 +53,12 @@
   <body>
     <div class="container">
       <div th:include="template::header"></div>
-      <form class="form-signin">
+      <form class="form-signin" th:action="@{/j_spring_security_check}" method="POST">
         <h2 class="form-signin-heading">Please sign in</h2>
-        <input type="text" class="form-control" placeholder="ID pegawai" />
-        <input type="password" class="form-control" placeholder="Password" />
-        <button type="submit" class="btn btn-warning btn-primary btn-block">Sign In</button>
+        <input type="text" name="j_username" class="form-control" placeholder="ID pegawai" />
+        <input type="password" name="j_password" class="form-control" placeholder="Password" />
+        <button type="submit" name="submit" class="btn btn-warning btn-primary btn-block">Sign In</button>
       </form>
-      Tes
     </div>
   </body>
 </html>
