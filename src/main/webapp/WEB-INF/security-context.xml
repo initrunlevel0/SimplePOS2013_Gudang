@@ -15,9 +15,12 @@
         <form-login login-page="/login" default-target-url="/list" authentication-failure-url="/accessdenied" />
         <logout logout-success-url="/logout" />
     </http>
- 	<beans:bean id="pegawaiGudangService" class="id.ac.its.SimplePOS2013.Gudang.ServiceBO.PegawaiGudangImplService" />
+    
+	
     <authentication-manager alias="authenticationManager">
-        <authentication-provider user-service-ref="pegawaiGudangService" />
+        <authentication-provider user-service-ref="pegawaiGudangImplService">
+        	 <password-encoder hash="plaintext" />
+    	</authentication-provider>
     </authentication-manager>
  
 </beans:beans>

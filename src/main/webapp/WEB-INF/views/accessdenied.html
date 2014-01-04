@@ -12,22 +12,22 @@
   
   <body>
     <div class="container">
-     	<body>
+    
 	
 		<h1 id="banner">Unauthorized Access !!</h1>
 	
 		<hr />
 	
-		<c:if test="${not empty error}">
+		
 			<div style="color:red">
 				Your fake login attempt was bursted, dare again !!<br /> 
-				Caused : ${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message}
+				Caused : <div th:text="${session.get('SPRING_SECURITY_LAST_EXCEPTION').getAuthentication()}">Halo</div>
+				<ul th:each="e: ${session.get('SPRING_SECURITY_LAST_EXCEPTION').getStackTrace()}">
+					<li th:text="${e}">Lalah</li>
+				</ul>
 			</div>
-		</c:if>
-	
 		<p class="message">Access denied!</p>
 		<a href="/its/login">Go back to login page</a> 
-	</body>
-    </div>
+	</div>
   </body>
 </html>
