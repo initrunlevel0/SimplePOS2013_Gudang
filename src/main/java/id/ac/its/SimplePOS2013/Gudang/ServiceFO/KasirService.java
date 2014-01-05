@@ -13,5 +13,7 @@ public interface KasirService {
 	public void kurangiStokToko(Barang barang, Toko toko, int stok);
 	public Toko lihatInfoToko(int idToko);
 	public void tambahTransaksi(Transaksi transaksi, List<DetilTransaksi> detilTransaksi);
+	void tambahDetilTransaksi(DetilTransaksi detilTransaksi);
+	void tambahTransaksi(Transaksi transaksi);
 	
 }
