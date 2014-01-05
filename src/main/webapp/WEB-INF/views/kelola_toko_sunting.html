@@ -5,8 +5,8 @@
   <head>
   <h1>Sunting Toko</h1>
     <title>New Page</title>
-    <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" />
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
   </head>
@@ -16,19 +16,19 @@
     	<form action="#" th:action="@{/gudang/kelola_toko/sunting}" th:object="${toko}" method="post">
         <div class="form-group">
           <label for="exampleInputEmail1">ID Toko</label>
-          <input type="text" class="form-control" th:field="*{idToko}" placeholder="Masukkan ID Toko yang akan di sunting">
+          <input type="text" class="form-control" th:field="*{idToko}" placeholder="Masukkan ID Toko yang akan di sunting" />
         </div>
         <div class="form-group">
           <label for="exampleInputPassword1">Nama Toko</label>
-          <input type="text" class="form-control" th:field="*{namaToko}" placeholder="Masukkan Nama Toko yang Baru">
+          <input type="text" class="form-control" th:field="*{namaToko}" placeholder="Masukkan Nama Toko yang Baru" />
         </div>
         <div class="form-group">
           <label for="exampleInputPassword1">Alamat Toko</label>
-          <input type="text" class="form-control" th:field="*{alamatToko}" placeholder="Masukkan Alamat Toko yang Baru">
+          <input type="text" class="form-control" th:field="*{alamatToko}" placeholder="Masukkan Alamat Toko yang Baru" />
         </div>
         <div class="form-group">
           <label for="exampleInputPassword1">Uang Toko</label>
-          <input type="text" class="form-control" th:field="*{uangToko}" placeholder="Masukkan Uang Toko yang Baru">
+          <input type="text" class="form-control" th:field="*{uangToko}" placeholder="Masukkan Uang Toko yang Baru" />
         </div>
         <button type="submit" name="suntingToko" class="btn btn-default">Submit</button>
       </form>
