@@ -42,7 +42,7 @@ public class GudangKelolaToko {
     }
     
     @RequestMapping(value="/gudang/kelola_toko/hapus", params={"hapusToko"},method=RequestMethod.POST)
-    public String hapusToko(String idToko, BindingResult bindingResult){
+    public String hapusToko(int idToko, BindingResult bindingResult){
     	this.tokoService.hapusToko(idToko);
     	return "redirect:/gudang/kelola_toko";
     }

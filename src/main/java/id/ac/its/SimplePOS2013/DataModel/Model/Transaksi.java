@@ -1,38 +1,38 @@
 package id.ac.its.SimplePOS2013.DataModel.Model;
 
-import java.sql.Date;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name="TRANSAKSI")
 public class Transaksi {
 	
 	@Id
+	@GeneratedValue
 	@Column(name="ID_TRANSAKSI")
-	private String idTransaksi;
+	private int idTransaksi;
 	
-	@ManyToOne
-	@JoinColumn(name="ID_PELANGGAN")
-	private Pelanggan pelanggan;
-	
-	@ManyToOne
-	@JoinColumn(name="ID_PEGAWAI_TOKO")
-	private PegawaiToko pegawaiToko;
 	
 	@ManyToOne
 	@JoinColumn(name="ID_TOKO")
 	private Toko toko;
 	
 	@Column(name="TANGGAL")
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date tanggal; 
 	
 	
@@ -56,38 +56,23 @@ public class Transaksi {
 	}
 
 
-	public Transaksi(String idTransaksi, Pelanggan pelanggan,
+	public Transaksi(int idTransaksi, Pelanggan pelanggan,
 			PegawaiToko pegawaiToko, Toko toko, Date tanggal) {
 		this.idTransaksi = idTransaksi;
-		this.pelanggan = pelanggan;
-		this.pegawaiToko = pegawaiToko;
+	
 		this.toko = toko;
 		this.tanggal = tanggal;
 	}
 
-	public String getIdTransaksi() {
+	public int getIdTransaksi() {
 		return idTransaksi;
 	}
 
-	public void setIdTransaksi(String idTransaksi) {
+	public void setIdTransaksi(int idTransaksi) {
 		this.idTransaksi = idTransaksi;
 	}
 
-	public Pelanggan getPelanggan() {
-		return pelanggan;
-	}
-
-	public void setPelanggan(Pelanggan pelanggan) {
-		this.pelanggan = pelanggan;
-	}
-
-	public PegawaiToko getPegawaiToko() {
-		return pegawaiToko;
-	}
-
-	public void setPegawaiToko(PegawaiToko pegawaiToko) {
-		this.pegawaiToko = pegawaiToko;
-	}
+	
 
 	public Toko getToko() {
 		return toko;

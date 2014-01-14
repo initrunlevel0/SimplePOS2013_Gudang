@@ -13,7 +13,10 @@ import id.ac.its.SimplePOS2013.DataModel.Model.Transaksi;
 public class TransaksiServiceImpl implements TransaksiService {
 
 	@Autowired
-	private BaseDAO<Transaksi, String> baseDAO;
+	private BaseDAO<Transaksi, Integer> baseDAO;
+	
+
+	
 	@Override
 	public List<Transaksi> transaksiPerBulan(Toko toko) {
 		String query = new String("");

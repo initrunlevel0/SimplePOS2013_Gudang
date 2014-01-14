@@ -19,6 +19,7 @@ public class StokToko {
 	
 	@ManyToOne
 	@JoinColumn(name="ID_TOKO")
+	@JsonIgnore
 	private Toko toko; 
 	
 	@ManyToOne

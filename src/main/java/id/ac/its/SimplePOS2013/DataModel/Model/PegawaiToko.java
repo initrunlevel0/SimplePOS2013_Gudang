@@ -7,6 +7,7 @@ import java.util.Set;
 
 
 
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,6 +16,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table (name = "PEGAWAI_TOKO")
@@ -26,6 +29,7 @@ public class PegawaiToko {
 
 	@ManyToOne
 	@JoinColumn(name="ID_TOKO")
+	@JsonIgnore
 	private Toko toko;
 
 	@Column (name = "NAMA_PEGAWAI_TOKO")
@@ -40,8 +44,8 @@ public class PegawaiToko {
 	@Column (name ="GAJI_PEGAWI_TOKO")
 	private int gajiPegawaiToko; 
 
-	@OneToMany (mappedBy="pegawaiToko")
-	private Set<Transaksi> transaksi;
+	//@OneToMany (mappedBy="pegawaiToko")
+	//private Set<Transaksi> transaksi;
 
 
 
@@ -139,15 +143,6 @@ public class PegawaiToko {
 
 
 
-	public Set<Transaksi> getTransaksi() {
-		return transaksi;
-	}
-
-
-
-	public void setTransaksi(Set<Transaksi> transaksi) {
-		this.transaksi = transaksi;
-	}
 
 	
 	
