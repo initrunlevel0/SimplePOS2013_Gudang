@@ -32,15 +32,25 @@ public class Toko {
 	private Integer uangToko;
 
 
-	@OneToMany(mappedBy="toko", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="toko")
 	private Set<StokToko> stokPerToko;
 
 
 //	@OneToMany(mappedBy="toko", fetch=FetchType.EAGER)
 //	private Set<PegawaiToko> pegawaiToko;
 
-//	@OneToMany(mappedBy="toko", fetch = FetchType.EAGER)
-//	private Set<Transaksi> transaksi;
+	public Set<Transaksi> getTransaksi() {
+		return transaksi;
+	}
+
+
+	public void setTransaksi(Set<Transaksi> transaksi) {
+		this.transaksi = transaksi;
+	}
+
+
+	@OneToMany(mappedBy="toko")
+	private Set<Transaksi> transaksi;
 
 	
 	public Toko(){

@@ -10,10 +10,14 @@ import id.ac.its.SimplePOS2013.Gudang.ServiceBO.TokoService;
 import id.ac.its.SimplePOS2013.Gudang.ServiceBO.TransaksiService;
 
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class KasirServiceImpl implements KasirService {
@@ -32,16 +36,22 @@ public class KasirServiceImpl implements KasirService {
 	}
 
 	@Override
-	public Transaksi tambahTransaksi(Struk struk) {
+	@Transactional
+	public  Transaksi tambahTransaksi(Struk struk) {
 		Transaksi transaksi = new Transaksi();
-		List<Barang> listBarang = new ArrayList<Barang>();
-		transaksi.setToko(tokoService.lihatToko(struk.getIdToko()));
-		for(String s: struk.getIdBarang()) {
-			listBarang.add(barangService.ambilBarangId(s));
-		}
-		transaksi.setBarang(listBarang);
+		transaksi.setTanggal(new Date());
+		transaksi.setToko(tokoService.lihatReferensiToko(struk.getIdToko()));
 		
-		transaksiService.tambahTransaksi(transaksi);
+		
+		Set<Barang> listBarang = new HashSet<Barang>();
+		for(String s: struk.getIdBarang()) {
+			listBarang.add(barangService.lihatReferensiBarang(s));
+	    }
+		
+		transaksi.setBarang(listBarang);
+		transaksiService.suntingTransaksi(transaksi);
+		
+		
 		return transaksi;
 	}
 

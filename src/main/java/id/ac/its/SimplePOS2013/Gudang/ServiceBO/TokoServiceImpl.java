@@ -2,6 +2,7 @@ package id.ac.its.SimplePOS2013.Gudang.ServiceBO;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import id.ac.its.SimplePOS2013.DataModel.DAO.BaseDAO;
 import id.ac.its.SimplePOS2013.DataModel.Model.Toko;
@@ -45,6 +46,11 @@ public class TokoServiceImpl implements TokoService{
 	@Override
 	public void hapusToko(int idToko){
 		baseDao.delete(idToko, Toko.class);
+	}
+
+	@Override
+	public Toko lihatReferensiToko(int idToko) {
+		return baseDao.getReferences(idToko, Toko.class);
 	}
 	
 	

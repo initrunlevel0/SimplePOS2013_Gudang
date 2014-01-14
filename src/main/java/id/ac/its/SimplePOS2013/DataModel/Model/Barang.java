@@ -1,18 +1,25 @@
 package id.ac.its.SimplePOS2013.DataModel.Model;
 
+import java.util.List;
 import java.util.Set;
+import java.io.Serializable;
 import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name="BARANG")
-public class Barang {
+public class Barang{
     
 	@Id
 	@Column(name="ID_BARANG")
@@ -33,8 +40,20 @@ public class Barang {
 	@Column(name="TANGGAL_KADALUARSA")
 	private Date tanggalKadaluarsa;
 	
-	@OneToMany(fetch = FetchType.EAGER, mappedBy="barang")
+	@OneToMany(mappedBy="barang")
 	private Set<StokToko> stokToko;
+	
+	@ManyToMany(mappedBy="barang")
+	@JsonIgnore
+	private Set<Transaksi> transaksi;
+	
+	public Set<Transaksi> getTransaksi() {
+		return transaksi;
+	}
+
+	public void setTransaksi(Set<Transaksi> transaksi) {
+		this.transaksi = transaksi;
+	}
 	
 	public Barang(){
 	
@@ -110,6 +129,8 @@ public class Barang {
 	public void setStokToko(Set<StokToko> stokToko) {
 		this.stokToko = stokToko;
 	}
+	
+	
 
 	
 }

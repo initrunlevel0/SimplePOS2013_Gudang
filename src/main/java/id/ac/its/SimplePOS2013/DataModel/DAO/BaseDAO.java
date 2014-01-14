@@ -7,6 +7,7 @@ public interface BaseDAO<T, U> {
 	void update(T t);
 	void delete(U id, Class <T> clazz);
 	T view(U id, Class <T> clazz);
+	T getReferences(U id, Class<T> clazz);
 	List<T> listAll(Class <T> clazz);
 	List<T> doQuery(String query, Class <T> clazz);
 }

@@ -3,6 +3,7 @@ package id.ac.its.SimplePOS2013.Gudang.ServiceBO;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -10,7 +11,6 @@ import id.ac.its.SimplePOS2013.DataModel.DAO.BaseDAO;
 import id.ac.its.SimplePOS2013.DataModel.Model.Barang;
 
 @Service
-@Transactional
 public class BarangServiceImpl implements BarangService {
 	
 	@Autowired
@@ -23,9 +23,14 @@ public class BarangServiceImpl implements BarangService {
 	}
 
 	@Override
-	public Barang ambilBarangId(String idBarang) {
+	public Barang lihatBarang(String idBarang) {
 		return baseDao.view(idBarang, Barang.class);
 	}
+	
+	@Override
+	public Barang lihatReferensiBarang(String idBarang) {
+		return baseDao.getReferences(idBarang, Barang.class);
+	};
 
 	@Override
 	public void tambahStokBarang(String idBarang, int jumlahBarang) {

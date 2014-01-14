@@ -5,13 +5,18 @@
              version="1.0">
     <persistence-unit name="SimplePOSJpaPersistenceUnit">
         <provider>org.hibernate.ejb.HibernatePersistence</provider>
-        
+        <class>id.ac.its.SimplePOS2013.DataModel.Model.PegawaiGudang</class>
+        <class>id.ac.its.SimplePOS2013.DataModel.Model.PegawaiToko</class>
+        <class>id.ac.its.SimplePOS2013.DataModel.Model.Pelanggan</class>
+        <class>id.ac.its.SimplePOS2013.DataModel.Model.StokToko</class>
+        <class>id.ac.its.SimplePOS2013.DataModel.Model.Toko</class>
+        <class>id.ac.its.SimplePOS2013.DataModel.Model.Transaksi</class>
         <properties>
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
-            <property name="hibernate.hbm2ddl.auto" value="create" />
+            <property name="hibernate.hbm2ddl.auto" value="validate" />
             <property name="hibernate.show_sql" value="true" />
             <property name="hibernate.cache.provider_class" value="org.hibernate.cache.HashtableCacheProvider" />
-        	<property name="hibernate.show_sql" value="true" />
+        	
         </properties>
     </persistence-unit>
 </persistence>

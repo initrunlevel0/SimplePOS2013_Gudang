@@ -40,7 +40,7 @@ public class Pelanggan {
 		this.namaPelanggan = namaPelanggan;
 		this.alamatPelanggan = alamatPelanggan;
 		this.telepon = telepon;
-		this.transaksi = transaksi;
+		
 	}
 
 	public String getIdPelanggan() {

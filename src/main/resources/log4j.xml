@@ -37,8 +37,12 @@
 		<level value="debug" />
 	</logger>
 
-	<logger name="org.hibernate">
+	<logger name="org.hibernate.SQL">
 		<level value="debug" />
+	</logger>
+	
+	<logger name="org.hibernate.type">
+		<level value="trace" />
 	</logger>
 	
 	<!-- Root Logger -->

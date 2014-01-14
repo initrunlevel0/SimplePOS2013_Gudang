@@ -66,7 +66,7 @@ public class PegawaiToko {
 		this.alamatPegawaiToko = nlamatPegawaiToko;
 		this.neleponPegawaiToko = neleponPegawaiToko;
 		this.gajiPegawaiToko = gajiPegawaiToko;
-		this.transaksi = transaksi;
+	
 	}
 
 

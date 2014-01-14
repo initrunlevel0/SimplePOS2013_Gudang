@@ -1,10 +1,14 @@
 package id.ac.its.SimplePOS2013.DataModel.Model;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -28,30 +32,29 @@ public class Transaksi {
 	
 	
 	@ManyToOne
+	@JsonIgnore
 	@JoinColumn(name="ID_TOKO")
 	private Toko toko;
 	
 	@Column(name="TANGGAL")
-	@Temporal(TemporalType.TIMESTAMP)
 	private Date tanggal; 
-	
 	
 	
 	@ManyToMany
 	@JoinTable(name="DETIL_TRANSAKSI", joinColumns={@JoinColumn(name="ID_TRANSAKSI")}, inverseJoinColumns={@JoinColumn(name="ID_BARANG")})
-	private List<Barang> barang;
+	private Set<Barang> barang;
 	
 	public Transaksi(){
 		
 	}
 
 	
-	public List<Barang> getBarang() {
+	public Set<Barang> getBarang() {
 		return barang;
 	}
 
 
-	public void setBarang(List<Barang> barang) {
+	public void setBarang(Set<Barang> barang) {
 		this.barang = barang;
 	}
 

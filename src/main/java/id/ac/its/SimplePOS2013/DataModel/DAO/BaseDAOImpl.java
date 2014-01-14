@@ -5,13 +5,15 @@ import java.util.List;
 import javax.persistence.Embedded;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.PersistenceContextType;
 import javax.persistence.TypedQuery;
 
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 @Repository(value = "baseDao")
-@Transactional
+@Transactional(propagation=Propagation.REQUIRED)
 public class BaseDAOImpl<T, U> implements BaseDAO<T, U> {
 	@PersistenceContext
 	private EntityManager em;
@@ -34,6 +36,7 @@ public class BaseDAOImpl<T, U> implements BaseDAO<T, U> {
 		if(obj != null) {
 			em.remove(obj);
 		}
+		em.flush();
 		
 		
 	}
@@ -43,13 +46,19 @@ public class BaseDAOImpl<T, U> implements BaseDAO<T, U> {
 	public T view(U id, Class<T> clazz) {
 		return em.find(clazz, id);
 	}
-
+	
+	@Override
+	public T getReferences(U id, Class<T> clazz) {
+		return em.getReference(clazz, id);
+	}
+	
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<T> listAll(Class <T> clazz) {
 		TypedQuery<T> query = em.createQuery(" from " + clazz.getName(), clazz);
 		return query.getResultList();
 	}
+	
 
 	@Override
 	public List<T> doQuery(String query, Class <T> clazz) {

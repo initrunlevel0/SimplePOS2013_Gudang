@@ -6,7 +6,8 @@ import id.ac.its.SimplePOS2013.DataModel.Model.*;
 public interface BarangService {
 
     void tambahBarang(Barang barang);
-    Barang ambilBarangId(String idBarang);
+    Barang lihatBarang(String idBarang);
+    Barang lihatReferensiBarang(String idBarang);
     void tambahStokBarang(String idBarang, int jumlahBarang);
     void suntingBarang(Barang barang);
     void hapusBarang(String idBarang);
