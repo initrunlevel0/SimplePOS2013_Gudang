@@ -6,7 +6,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-
+/*
 @Entity
 @Table(name="DETIL_TRANSAKSI")
 public class DetilTransaksi {
@@ -83,3 +83,4 @@ public class DetilTransaksi {
 	}
 	
 }
+*/

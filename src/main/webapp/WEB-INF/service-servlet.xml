@@ -8,10 +8,11 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
                            http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd">
    
-   <bean id="kasirService" class="id.ac.its.SimplePOS2013.Gudang.ServiceFO.KasirServiceImpl" />
+   <!-- 
+   <bean id="kasirServiceWebService" class="id.ac.its.SimplePOS2013.Gudang.ServiceFO.KasirServiceImpl" />
    <bean id="httpKasirService"
          class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter"
-         p:service-ref="kasirService">
+         p:service-ref="kasirServiceWebService">
       <property name="serviceInterface">
          <value>id.ac.its.SimplePOS2013.Gudang.ServiceFO.KasirService</value>
       </property>
@@ -25,5 +26,5 @@
          </props>
       </property>
    </bean>
-
+   -->
 </beans>

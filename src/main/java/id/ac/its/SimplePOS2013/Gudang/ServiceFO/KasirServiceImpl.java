@@ -2,20 +2,23 @@ package id.ac.its.SimplePOS2013.Gudang.ServiceFO;
 
 import id.ac.its.SimplePOS2013.DataModel.DAO.BaseDAO;
 import id.ac.its.SimplePOS2013.DataModel.Model.Barang;
-import id.ac.its.SimplePOS2013.DataModel.Model.DetilTransaksi;
 import id.ac.its.SimplePOS2013.DataModel.Model.Struk;
 import id.ac.its.SimplePOS2013.DataModel.Model.Toko;
 import id.ac.its.SimplePOS2013.DataModel.Model.Transaksi;
 import id.ac.its.SimplePOS2013.Gudang.ServiceBO.BarangService;
-import id.ac.its.SimplePOS2013.Gudang.ServiceBO.DetailTransaksiService;
 import id.ac.its.SimplePOS2013.Gudang.ServiceBO.TransaksiService;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
 public class KasirServiceImpl implements KasirService {
-	
+	@Autowired
 	private BarangService barangService;
-	private DetailTransaksiService detilTransaksiService;
+
+	@Autowired
 	private TransaksiService transaksiService;
 	
 	@Override
@@ -24,10 +27,7 @@ public class KasirServiceImpl implements KasirService {
 		return barangService.daftarBarang();
 	}
 
-	@Override
-	public void tambahDetilTransaksi(DetilTransaksi detilTransaksi){
-		detilTransaksiService.tambahDetailTransaksi(detilTransaksi);
-	}
+
 	
 	@Override
 	public void tambahTransaksi(Transaksi transaksi) {
@@ -48,12 +48,6 @@ public class KasirServiceImpl implements KasirService {
 		return null;
 	}
 
-	@Override
-	public void tambahTransaksi(Transaksi transaksi,List<DetilTransaksi> detilTransaksi) {
-		transaksiService.tambahTransaksi(transaksi);
-		for(DetilTransaksi dt: detilTransaksi){
-			detilTransaksiService.tambahDetailTransaksi(dt);
-		}
-	}
+
 
 }

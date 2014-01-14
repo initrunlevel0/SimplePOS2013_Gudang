@@ -1,11 +1,14 @@
 package id.ac.its.SimplePOS2013.DataModel.Model;
 
 import java.sql.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -32,9 +35,26 @@ public class Transaksi {
 	@Column(name="TANGGAL")
 	private Date tanggal; 
 	
+	
+	
+	@ManyToMany
+	@JoinTable(name="DETIL_TRANSAKSI", joinColumns={@JoinColumn(name="ID_TRANSAKSI")}, inverseJoinColumns={@JoinColumn(name="ID_BARANG")})
+	private List<Barang> barang;
+	
 	public Transaksi(){
 		
 	}
+
+	
+	public List<Barang> getBarang() {
+		return barang;
+	}
+
+
+	public void setBarang(List<Barang> barang) {
+		this.barang = barang;
+	}
+
 
 	public Transaksi(String idTransaksi, Pelanggan pelanggan,
 			PegawaiToko pegawaiToko, Toko toko, Date tanggal) {
