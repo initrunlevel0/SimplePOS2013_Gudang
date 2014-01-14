@@ -25,8 +25,8 @@ public class Pelanggan {
 	@Column(name="TELEPON")
 	private String telepon;
 	
-	@OneToMany(mappedBy="pelanggan")
-    private Set<Transaksi> transaksi;
+	//@OneToMany(mappedBy="pelanggan")
+    //private Set<Transaksi> transaksi;
 	
 
 	public Pelanggan(){
@@ -83,14 +83,6 @@ public class Pelanggan {
 	}
 
 
-	public Set<Transaksi> getTransaksi() {
-		return transaksi;
-	}
-
-
-	public void setTransaksi(Set<Transaksi> transaksi) {
-		this.transaksi = transaksi;
-	}
 	
 	//setter and getter method
 	 

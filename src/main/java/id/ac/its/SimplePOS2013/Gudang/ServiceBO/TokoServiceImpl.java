@@ -10,7 +10,7 @@ import id.ac.its.SimplePOS2013.DataModel.Model.Toko;
 public class TokoServiceImpl implements TokoService{
 	
 	@Autowired
-	private BaseDAO<Toko, String> baseDao;
+	private BaseDAO<Toko, Integer> baseDao;
 
 	@Override
 	public void tambahToko(Toko toko) {
@@ -20,6 +20,11 @@ public class TokoServiceImpl implements TokoService{
 	@Override
 	public void suntingToko(Toko toko){
 		baseDao.update(toko);
+	}
+	
+	
+	public Toko lihatToko(int idToko){
+		return baseDao.view(idToko, Toko.class);
 	}
 	
 	@Override
@@ -38,7 +43,7 @@ public class TokoServiceImpl implements TokoService{
 	}
 	
 	@Override
-	public void hapusToko(String idToko){
+	public void hapusToko(int idToko){
 		baseDao.delete(idToko, Toko.class);
 	}
 	
