@@ -3,7 +3,7 @@
 <html>
   
   <head>
-    <title>New Page</title>
+    <title>Kelola barang</title>
     <meta name="viewport" content="width=device-width"/>
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css"/>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -12,7 +12,7 @@
   
   <body>
    <div th:include="template::header"></div>
-    <h1> Kelola Barang</h1>
+    <h1><center><b>Kelola Barang </b></center></h1>
     <div class="container">
       <table class="table">
         <thead>
@@ -41,7 +41,18 @@
   </body>
   
   <center><footer>
-    <button type="button" class="btn btn-default">Tambah</button> <button type="button" class="btn btn-default">Sunting</button> <button type="button" class="btn btn-default">Hapus</button> <button type="button" class="btn btn-default">Tambah Stok</button> <button type="button" class="btn btn-default">Kirim Barang</button>
+    <a href ="gudang/kelola_barang_tambah.html" th:href ="@{/gudang/kelola_barang/tambah}" > 
+    <button type="button" class="btn btn-default">Tambah </button> </a>
+    <a href ="gudang/kelola_barang_sunting.html" th:href ="@{/gudang/kelola_barang/sunting}">
+    <button type="button" class="btn btn-default">Sunting</button> </a>
+    <a href ="gudang/kelola_barang_hapus.html" th:href ="@{/gudang/kelola_barang/hapus}">
+    <button type="button" class="btn btn-default">Hapus</button> </a>
+    <a href ="gudang/kelola_barang_tambah_stok.html" th:href ="@{/gudang/kelola_barang/tambah_stok_gudang}">
+    <button type="button" class="btn btn-default">Tambah Stok</button> </a>
+    <a href ="gudang/kelola_barang_kirim_ke_toko.html" th:href ="@{/gudang/kelola_barang/kirim_ke_toko}">
+    <button type="button" class="btn btn-default">Kirim Barang</button></a>
+  	
+  
   </footer>
   </center>
 </html>
