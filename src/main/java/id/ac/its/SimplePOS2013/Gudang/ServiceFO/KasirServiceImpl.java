@@ -49,10 +49,11 @@ public class KasirServiceImpl implements KasirService {
 	}
 
 	@Override
-	public void tambahTransaksi(Transaksi transaksi,
-			List<DetilTransaksi> detilTransaksi) {
-		// TODO Auto-generated method stub
-		
+	public void tambahTransaksi(Transaksi transaksi,List<DetilTransaksi> detilTransaksi) {
+		transaksiService.tambahTransaksi(transaksi);
+		for(DetilTransaksi dt: detilTransaksi){
+			detilTransaksiService.tambahDetailTransaksi(dt);
+		}
 	}
 
 }
