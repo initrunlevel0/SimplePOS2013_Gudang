@@ -1,0 +1,227 @@
+<!doctype html>
+
+<html>
+  
+  <head>
+    <title>Welcome to Kasir</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <style type="text/css">
+      /* Space out content a bit */
+      body {
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+      /* Everything but the jumbotron gets side spacing for mobile first views */
+      .header, .marketing, .footer {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+      /* Custom page header */
+      .header {
+        border-bottom: 1px solid #e5e5e5;
+      }
+      /* Make the masthead heading the same height as the navigation */
+      .header h3 {
+        margin-top: 0;
+        margin-bottom: 0;
+        line-height: 40px;
+        padding-bottom: 19px;
+      }
+      /* Custom page footer */
+      .footer {
+        padding-top: 19px;
+        color: #777;
+        border-top: 1px solid #e5e5e5;
+      }
+      /* Customize container */
+      @media(min-width: 768px) {
+        .container {
+          max-width: 730px;
+        }
+      }
+      .container-narrow > hr {
+        margin: 30px 0;
+      }
+      /* Main marketing message and sign up button */
+      .jumbotron {
+        text-align: center;
+        border-bottom: 1px solid #e5e5e5;
+      }
+      .jumbotron .btn {
+        font-size: 21px;
+        padding: 14px 24px;
+      }
+      /* Supporting marketing content */
+      .marketing {
+        margin: 40px 0;
+      }
+      .marketing p + h4 {
+        margin-top: 28px;
+      }
+      /* Responsive: Portrait tablets and up */
+      @media screen and(min-width: 768px) {
+        /* Remove the padding we set earlier */
+        .header, .marketing, .footer {
+          padding-left: 0;
+          padding-right: 0;
+        }
+        /* Space out the masthead */
+        .header {
+          margin-bottom: 30px;
+        }
+        /* Remove the bottom border on the jumbotron for visual effect */
+        .jumbotron {
+          border-bottom: 0;
+        }
+      }
+      .navbar-inner {
+        border-radius: 0 0 0 0;
+      }
+      #calculator-wrapper {
+        font-size: 42px;
+      }
+      #calculator-wrapper .uneditable-input {
+        height: 42px;
+        font-size: 42px;
+        line-height: 35px;
+        width: 100%;
+      }
+      #calculator-wrapper .span1 {
+        height: 42px;
+        font-size: 42px;
+      }
+      #calculator-wrapper .span1 .visible-phone {
+        line-height: 25px;
+      }
+      #calculator-wrapper .span1 .hidden-phone {
+        line-height: 42px;
+      }
+      .btn-calc {
+        width: 10%;
+        height: 50px;
+        margin: 0 5px 5px 0;
+        line-height: 50px;
+        font-weight: bold;
+        font-size: 25px;
+      }
+    </style>
+  </head>
+  
+  <body>
+    <div class="container">
+      <div class="header">
+        <ul class="nav nav-pills pull-right">
+          <li class="active">
+            <a href="#">Logout</a>
+          </li>
+          <li>
+            <a href="about.html">About</a>
+          </li>
+          <li>
+            <a href="#">Contact</a>
+          </li>
+        </ul>
+        <h3 class="text-muted">Point of Sale</h3>
+      </div>
+      <div class="jumbotron">
+        <h1>Kasir Minimarket</h1>
+        <form class="form-inline" role="form">
+          <div class="col-xs-6">
+            <label class="sr-only" for="exampleInputEmail2">Nama Barang</label>
+            <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Nama Barang">
+          </div>
+          <div class="col-xs-2">
+            <label class="sr-only" for="exampleInputPassword2">Quota</label>
+            <input type="password" class="form-control" id="exampleInputPassword2" placeholder="QTY">
+          </div>
+          <button type="submit" class="btn btn-success">Enter</button>
+        </form>
+      </div>
+      <div class="row marketing">
+        <div class="col-md-9">
+          <div class="panel panel-default">
+            <table class="table table-hover table-striped">
+              <tbody>
+                <tr>
+                  <th>ID Barang</th>
+                  <th>Nama Barang</th>
+                  <th>QTY</th>
+                  <th>Total</th>
+                </tr>
+                <tr>
+                  <td>731631</td>
+                  <td>Oreo</td>
+                  <td>2</td>
+                  <td>5000</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <h4>Keterangan</h4>
+          <p>Seluruh rincian transaksi akan ditampilkan di struk yang tertera di atas.</p>
+        </div>
+        <div class="col-md-3">
+          <div class="row">
+            <div class="panel panel-default">
+              <div class="panel-body">
+              	<div class="container">
+                <h1><span class="label label-default">Total</span></h1>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="panel panel-default">
+              <div class="panel-body">
+              	<div class="container">
+                <button class="btn btn-success" data-toggle="modal" data-target="#myModal">Bayar</button>
+                <!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Jumlah Uang</h4>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+            <label class="control-label">Uang Yang Dibayar</label>
+            <div class="controls">
+              <input type="text" class="form-control">
+            </div>
+          </div>
+          <a class="btn btn-primary">Bayar</a>
+      </div>
+      
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <p>&copy; Build For J2EE Project 2013</p>
+      </div>
+    </div>
+    <!-- /container -->
+  </body>
+
+</html>
