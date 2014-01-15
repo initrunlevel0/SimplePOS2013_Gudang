@@ -1,5 +1,7 @@
 package id.ac.its.SimplePOS2013.Gudang.ServiceBO;
 
+import java.util.List;
+
 import id.ac.its.SimplePOS2013.DataModel.Model.*;
 
 public interface TokoService {
@@ -9,7 +11,7 @@ public interface TokoService {
 	Toko lihatReferensiToko(int idToko);
 	int hitungPemasukan(String idToko, String idTransaksi);
 	int hitungPengeluaran(String idPegawaiToko, String idStokPerToko);
-	
+	List<Toko> daftarToko();
 	void hapusToko(int idToko);
 
 }

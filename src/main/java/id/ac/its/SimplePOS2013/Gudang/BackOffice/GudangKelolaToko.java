@@ -1,5 +1,6 @@
 package id.ac.its.SimplePOS2013.Gudang.BackOffice;
 
+import id.ac.its.SimplePOS2013.DataModel.Model.Barang;
 import id.ac.its.SimplePOS2013.DataModel.Model.Toko;
 import id.ac.its.SimplePOS2013.Gudang.ServiceBO.TokoService;
 
@@ -52,4 +53,8 @@ public class GudangKelolaToko {
   	public String homeKelolaToko(Model model) {
   		return "kelola_toko";
   	}
+	@ModelAttribute("daftarToko")
+	public List<Toko> daftarBarang(){
+		return this.tokoService.daftarToko();
+	}
 }
