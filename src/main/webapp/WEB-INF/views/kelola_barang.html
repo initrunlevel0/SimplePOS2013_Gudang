@@ -40,7 +40,7 @@
             <td></td>
             <td></td>
             <td></td>
-            <td><button type="button" class="btn btn-default">Tambah</button> <button type="button" class="btn btn-default">Sunting</button> <button type="button" class="btn btn-default">Hapus</button></td>
+            <td></td>
           </tr>
           <tr>
             <td>2</td>
@@ -53,7 +53,8 @@
             </td>
             <td>   
             </td>
-            <td><button type="button" class="btn btn-default">Tambah</button> <button type="button" class="btn btn-default">Sunting</button> <button type="button" class="btn btn-default">Hapus</button></td>
+            <td>
+            </td>
           </tr>
           <tr>
             <td>
@@ -67,7 +68,15 @@
   </body>
   
   <center><footer>
-     <button type="button" class="btn btn-default">Tambah Stok</button> <button type="button" class="btn btn-default">Kirim Barang</button>
+  	 <a href ="gudang/kelola_barang_tambah.html" th:href ="@{/gudang/kelola_barang/tambah}" >
+     <button type="button" class="btn btn-default">Tambah</button></a>
+     <a href ="gudang/kelola_barang_sunting.html" th:href ="@{/gudang/kelola_barang/sunting}" > 
+     <button type="button" class="btn btn-default">Sunting</button> </a>
+     <button type="button" class="btn btn-default">Hapus</button>
+     <a href ="gudang/kelola_barang_tambah_stok.html" th:href ="@{/gudang/kelola_barang/tambah_stok_gudang}" > 
+     <button type="button" class="btn btn-default">Tambah Stok</button></a>
+     <a href ="gudang/kelola_barang_kirim_ke_toko.html" th:href ="@{/gudang/kelola_barang/kirim_ke_toko}" >
+     <button type="button" class="btn btn-default">Kirim Barang</button></a>
   </footer></center>
 
 </html>

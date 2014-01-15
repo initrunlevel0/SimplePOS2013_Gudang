@@ -40,5 +40,9 @@ public class GudangHomeController {
 	public String logout(Model model) {
 		return "logout";
 	}
+	@RequestMapping(value="/contact", method = RequestMethod.GET) 
+	public String contact(Model model) {
+		return "contact";
+	}
 	
 }
