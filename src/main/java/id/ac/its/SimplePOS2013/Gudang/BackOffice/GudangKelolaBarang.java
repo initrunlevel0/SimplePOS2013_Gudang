@@ -26,6 +26,13 @@ public class GudangKelolaBarang {
 	public String homeKelolaBarang(Model model) {
 		return "kelola_barang";
 	}
+	
+	//=============================/menampilkan gudang
+		@RequestMapping(value = "/gudang", method = RequestMethod.GET)
+		public String homeGudang(Model model) {
+			return "gudang";
+		}
+	
 	@ModelAttribute("daftarBarang")
 	public List<Barang> daftarBarang(){
 		return this.barangService.daftarBarang();
