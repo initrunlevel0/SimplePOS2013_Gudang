@@ -46,4 +46,10 @@ public class GudangKelolaToko {
     	this.tokoService.hapusToko(idToko);
     	return "redirect:/gudang/kelola_toko";
     }
+    
+    //=============================/menampilkan home kelola toko
+  	@RequestMapping(value = "/gudang/kelola_toko", method = RequestMethod.GET)
+  	public String homeKelolaToko(Model model) {
+  		return "kelola_toko";
+  	}
 }
