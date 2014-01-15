@@ -1,16 +1,25 @@
 <!doctype html>
 <!-- Built with Divshot - http://www.divshot.com -->
 <html>
+
   <head>
-    <title> Kelola Kirim Barang</title></title>
-    <h1>Kelola Kirim Barang</h1>
-    <p style="Text-align: center">Halaman ini berguna untuk mengirimkan barang yang ada digudang ke toko-toko tujuan</p>
+  	<title> Kelola Barang - Kirim Barang</title>
     <meta name="viewport" content="width=device-width"/>
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js" type="text/javascript"></script>
     <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js" type="text/javascript"></script>
+     <style type="text/css">
+      body {
+        padding-top: 40px;
+        padding-bottom: 40px;
+      }
+    </style>
   </head>
+  
   <body>
+  	<div th:include="template::header"></div>
+    <h1>Kelola Kirim Barang</h1>
+    <p style="Text-align: center">Halaman ini berguna untuk mengirimkan barang yang ada digudang ke toko-toko tujuan</p>
     <div class="container">
       <table class="table">
   <thead>

@@ -3,16 +3,23 @@
 <html>
   
   <head>
-  <h1>Tambah Stok Toko</h1>
-    <title>New Page</title>
-    <p style="Text-align: center">Halaman ini berguna untuk menambah stok barang pada toko </p>
+  	<title>Kelola Barang - Tambah Stok</title>
     <meta name="viewport" content="width=device-width"/>
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css"/>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <style type="text/css">
+      body {
+        padding-top: 40px;
+        padding-bottom: 40px;
+      }
+    </style>
   </head>
   
   <body>
+  	<div th:include="template::header"></div>
+  	<h1>Tambah Stok Toko</h1>
+    <p style="Text-align: center">Halaman ini berguna untuk menambah stok barang pada toko </p>
     <div class="container">
       <form role="form">
         <div class="form-group">
