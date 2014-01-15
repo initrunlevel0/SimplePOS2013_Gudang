@@ -10,23 +10,21 @@ import org.springframework.stereotype.Service;
 public class DetailTransaksiServiceImpl implements DetailTransaksiService{
 	
 	@Autowired
-	private BaseDAO<DetilTransaksi, String> baseDao;
+	private BaseDAO<DetilTransaksi, Integer> baseDao;
 	
-	@Override
+	
 	public void tambahDetailTransaksi (DetilTransaksi detilTransaksi){
 		baseDao.add(detilTransaksi);
 	}
 	
-	@Override
-    public int totalHarga (String idDetailTransaksi){
+	public int totalHarga (int idDetailTransaksi){
 		return 0;
     }
-	@Override
+	
 	public void hitungKembalian (int totalHarga, int uangBayar){
 		//void?
 	}
 	
-	@Override
 	public void suntingDetailTransaksi(DetilTransaksi detilTransaksi){
 		baseDao.update(detilTransaksi);
 	}

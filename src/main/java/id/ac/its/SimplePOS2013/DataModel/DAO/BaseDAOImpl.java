@@ -67,6 +67,13 @@ public class BaseDAOImpl<T, U> implements BaseDAO<T, U> {
 		
 	}
 
+	@Override
+	public T doQuerySingle(String query, Class<T> clazz) {
+		// TODO Auto-generated method stub
+		TypedQuery<T> queryResult = em.createQuery(query, clazz);
+		return queryResult.getSingleResult();
+	}
+
 	
 
 }

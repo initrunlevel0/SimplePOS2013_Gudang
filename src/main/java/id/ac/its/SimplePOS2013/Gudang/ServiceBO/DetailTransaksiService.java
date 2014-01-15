@@ -6,7 +6,7 @@ public interface DetailTransaksiService {
 
     void tambahDetailTransaksi (DetilTransaksi detilTransaksi);
     void suntingDetailTransaksi(DetilTransaksi detilTransaksi);
-    int totalHarga (String idDetailTransaksi);
+    int totalHarga (int idDetailTransaksi);
     void hitungKembalian (int totalHarga, int uangBayar);
 
 }

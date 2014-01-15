@@ -34,7 +34,7 @@ public class Transaksi {
 	private int idTransaksi;
 	
 	//this
-	@OneToMany(mappedBy="transaksi")
+	@OneToMany(mappedBy="transaksi", cascade = CascadeType.ALL)
 	private Set<DetilTransaksi> detilTransaksi;
 	
 	@ManyToOne

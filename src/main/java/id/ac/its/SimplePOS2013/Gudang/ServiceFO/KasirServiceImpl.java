@@ -2,11 +2,14 @@ package id.ac.its.SimplePOS2013.Gudang.ServiceFO;
 
 import id.ac.its.SimplePOS2013.DataModel.DAO.BaseDAO;
 import id.ac.its.SimplePOS2013.DataModel.Model.Barang;
+import id.ac.its.SimplePOS2013.DataModel.Model.StokToko;
 import id.ac.its.SimplePOS2013.DataModel.Model.Struk;
 import id.ac.its.SimplePOS2013.DataModel.Model.Toko;
 import id.ac.its.SimplePOS2013.DataModel.Model.Transaksi;
 import id.ac.its.SimplePOS2013.DataModel.Model.DetilTransaksi;
 import id.ac.its.SimplePOS2013.Gudang.ServiceBO.BarangService;
+import id.ac.its.SimplePOS2013.Gudang.ServiceBO.DetailTransaksiService;
+import id.ac.its.SimplePOS2013.Gudang.ServiceBO.StokTokoService;
 import id.ac.its.SimplePOS2013.Gudang.ServiceBO.TokoService;
 import id.ac.its.SimplePOS2013.Gudang.ServiceBO.TransaksiService;
 
@@ -29,7 +32,13 @@ public class KasirServiceImpl implements KasirService {
 	private TransaksiService transaksiService;
 	
 	@Autowired
+	private DetailTransaksiService detilTransaksiService;
+	
+	@Autowired
 	private TokoService tokoService;
+	
+	@Autowired
+	private StokTokoService stokTokoService;
 	
 	public List<Barang> ambilDataBarang() {
 		// TODO Auto-generated method stub
@@ -46,15 +55,26 @@ public class KasirServiceImpl implements KasirService {
 		
 		Set<DetilTransaksi> listDetilTransaksi = new HashSet<DetilTransaksi>();
 		int i = 0;
+		transaksiService.tambahTransaksi(transaksi);
 		for(String s: struk.getIdBarang()) {
 			DetilTransaksi dt = new DetilTransaksi();
-			dt.setBarang(barangService.lihatBarang(s));
+			dt.setBarang(barangService.lihatReferensiBarang(s));
 			dt.setQty(struk.getBarangQty().get(i));
+			dt.setTransaksi(transaksi);
+			detilTransaksiService.tambahDetailTransaksi(dt);
+			listDetilTransaksi.add(dt);
+			
+			// Kurangi Stok
+			StokToko stokToko = stokTokoService.cariStok(struk.getIdToko(), s);
+			if(stokToko != null) {
+				stokToko.setStokPerToko(stokToko.getStokPerToko() - struk.getBarangQty().get(i));
+				stokTokoService.suntingStokPerToko(stokToko);
+			}
 			i++;
 		}
 		
 		transaksi.setDetilTransaksi(listDetilTransaksi);
-		transaksiService.tambahTransaksi(transaksi);
+		transaksiService.suntingTransaksi(transaksi);
 		
 		
 		return transaksi;

@@ -2,6 +2,7 @@ package id.ac.its.SimplePOS2013.DataModel.Model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -15,8 +16,9 @@ public class DetilTransaksi {
 	
 	
 	@Id
+	@GeneratedValue
 	@Column(name="ID_DETAIL_TRANSAKSI")
-	private String idDetailTransaksi;
+	private int idDetailTransaksi;
 	
 	//this
 	@ManyToOne
@@ -38,7 +40,7 @@ public class DetilTransaksi {
 		
 	}
 	//this
-	public DetilTransaksi(String idDetailTransaksi, Transaksi transaksi,
+	public DetilTransaksi(int idDetailTransaksi, Transaksi transaksi,
 			Barang barang, int qty) {
 		super();
 		this.idDetailTransaksi = idDetailTransaksi;
@@ -47,11 +49,11 @@ public class DetilTransaksi {
 		this.qty = qty;
 	}
 
-	public String getIdDetailTransaksi() {
+	public int getIdDetailTransaksi() {
 		return idDetailTransaksi;
 	}
 
-	public void setIdDetailTransaksi(String idDetailTransaksi) {
+	public void setIdDetailTransaksi(int idDetailTransaksi) {
 		this.idDetailTransaksi = idDetailTransaksi;
 	}
 

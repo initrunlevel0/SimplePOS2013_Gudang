@@ -10,4 +10,5 @@ public interface BaseDAO<T, U> {
 	T getReferences(U id, Class<T> clazz);
 	List<T> listAll(Class <T> clazz);
 	List<T> doQuery(String query, Class <T> clazz);
+	T doQuerySingle(String query, Class <T> clazz);
 }

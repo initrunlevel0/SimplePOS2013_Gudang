@@ -117,6 +117,7 @@
       var dataBarang = [];
       var barangDibeli = [];
       var barangQty = [];
+      var transaksi = {};
       var total=0;
 
       $(document).ready(function() {
@@ -137,7 +138,7 @@
               $("#barang").append("<tr><td>" + data.idBarang + "</td><td>" + data.namaBarang + "</td><td>" + quotabarang + "</td><td>" + quotabarang*data.hargaJual + "</td></tr>");  
               $("#totalHarga").html(total);
               barangDibeli.push(data.idBarang);
-              barangQty.push(quotaBarang);
+              barangQty.push(quotabarang);
             }
           });
         });

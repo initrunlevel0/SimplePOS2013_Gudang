@@ -22,9 +22,7 @@ public class StokTokoServiceImpl implements StokTokoService {
 	}
 
 	@Override
-	public void suntingStokPerToko(StokToko stokToko, String idStokToko) {
-		// TODO Auto-generated method stub
-		this.cariStok(idStokToko);
+	public void suntingStokPerToko(StokToko stokToko) {
 		baseDao.update(stokToko);
 	}
 
@@ -41,5 +39,10 @@ public class StokTokoServiceImpl implements StokTokoService {
 	
 	public List<StokToko> daftarStokToko(){
 		return baseDao.listAll(StokToko.class);
+	}
+
+	@Override
+	public StokToko cariStok(int idToko, String idBarang) {
+		return baseDao.doQuerySingle("from StokToko as s WHERE s.toko.idToko='" + idToko + "' AND s.barang.idBarang='" + idBarang + "'", StokToko.class);
 	}
 }
