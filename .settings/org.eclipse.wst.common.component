@@ -6,6 +6,6 @@
 		<wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources/META-INF"/>
 		<property name="java-output-path" value="target/classes"/>
-        <property name="context-root" value="its"/>
+        <property name="context-root" value="SimplePOS2013.Gudang"/>
 	</wb-module>
 </project-modules>
