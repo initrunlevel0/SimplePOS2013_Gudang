@@ -8,7 +8,14 @@ public class Struk implements Serializable {
 	
 	private int idToko;
 	private List<String> idBarang;
+	private List<Integer> barangQty;
 	
+	public List<Integer> getBarangQty() {
+		return barangQty;
+	}
+	public void setBarangQty(List<Integer> barangQty) {
+		this.barangQty = barangQty;
+	}
 	public int getIdToko() {
 		return idToko;
 	}

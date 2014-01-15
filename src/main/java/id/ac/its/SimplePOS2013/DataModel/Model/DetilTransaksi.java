@@ -6,40 +6,45 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-/*
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name="DETIL_TRANSAKSI")
 public class DetilTransaksi {
+	
 	
 	@Id
 	@Column(name="ID_DETAIL_TRANSAKSI")
 	private String idDetailTransaksi;
 	
+	//this
 	@ManyToOne
+	@JsonIgnore
 	@JoinColumn(name="ID_TRANSAKSI")
 	private Transaksi transaksi;
 	
+	//this
 	@ManyToOne
+	@JsonIgnore
 	@JoinColumn(name="ID_BARANG")
 	private Barang barang;
 	
+	//this
 	@Column
-	private int uangBayar;
+	private int qty;
 	
-	@Column
-	private int uangKembalian;
-
 	public DetilTransaksi(){
 		
 	}
+	//this
 	public DetilTransaksi(String idDetailTransaksi, Transaksi transaksi,
-			Barang barang, int uangBayar, int uangKembalian) {
+			Barang barang, int qty) {
 		super();
 		this.idDetailTransaksi = idDetailTransaksi;
 		this.transaksi = transaksi;
 		this.barang = barang;
-		this.uangBayar = uangBayar;
-		this.uangKembalian = uangKembalian;
+		this.qty = qty;
 	}
 
 	public String getIdDetailTransaksi() {
@@ -66,21 +71,14 @@ public class DetilTransaksi {
 		this.barang = barang;
 	}
 
-	public int getUangBayar() {
-		return uangBayar;
+	//this
+	
+	public int getQty() {
+		return qty;
 	}
-
-	public void setUangBayar(int uangBayar) {
-		this.uangBayar = uangBayar;
-	}
-
-	public int getUangKembalian() {
-		return uangKembalian;
-	}
-
-	public void setUangKembalian(int uangKembalian) {
-		this.uangKembalian = uangKembalian;
+	//this
+	public void setQty(int qty) {
+		this.qty = qty;
 	}
 	
 }
-*/

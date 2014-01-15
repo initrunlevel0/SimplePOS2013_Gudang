@@ -5,6 +5,7 @@ import id.ac.its.SimplePOS2013.DataModel.Model.Barang;
 import id.ac.its.SimplePOS2013.DataModel.Model.Struk;
 import id.ac.its.SimplePOS2013.DataModel.Model.Toko;
 import id.ac.its.SimplePOS2013.DataModel.Model.Transaksi;
+import id.ac.its.SimplePOS2013.DataModel.Model.DetilTransaksi;
 import id.ac.its.SimplePOS2013.Gudang.ServiceBO.BarangService;
 import id.ac.its.SimplePOS2013.Gudang.ServiceBO.TokoService;
 import id.ac.its.SimplePOS2013.Gudang.ServiceBO.TransaksiService;
@@ -43,13 +44,17 @@ public class KasirServiceImpl implements KasirService {
 		transaksi.setToko(tokoService.lihatReferensiToko(struk.getIdToko()));
 		
 		
-		Set<Barang> listBarang = new HashSet<Barang>();
+		Set<DetilTransaksi> listDetilTransaksi = new HashSet<DetilTransaksi>();
+		int i = 0;
 		for(String s: struk.getIdBarang()) {
-			listBarang.add(barangService.lihatReferensiBarang(s));
-	    }
+			DetilTransaksi dt = new DetilTransaksi();
+			dt.setBarang(barangService.lihatBarang(s));
+			dt.setQty(struk.getBarangQty().get(i));
+			i++;
+		}
 		
-		transaksi.setBarang(listBarang);
-		transaksiService.suntingTransaksi(transaksi);
+		transaksi.setDetilTransaksi(listDetilTransaksi);
+		transaksiService.tambahTransaksi(transaksi);
 		
 		
 		return transaksi;

@@ -15,9 +15,12 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
+import org.springframework.beans.factory.annotation.Autowired;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -30,6 +33,9 @@ public class Transaksi {
 	@Column(name="ID_TRANSAKSI")
 	private int idTransaksi;
 	
+	//this
+	@OneToMany(mappedBy="transaksi")
+	private Set<DetilTransaksi> detilTransaksi;
 	
 	@ManyToOne
 	@JsonIgnore
@@ -40,24 +46,22 @@ public class Transaksi {
 	private Date tanggal; 
 	
 	
-	@ManyToMany
-	@JoinTable(name="DETIL_TRANSAKSI", joinColumns={@JoinColumn(name="ID_TRANSAKSI")}, inverseJoinColumns={@JoinColumn(name="ID_BARANG")})
-	private Set<Barang> barang;
+	
+	//this
+	public Set<DetilTransaksi> getDetilTransaksi() {
+		return detilTransaksi;
+	}
+	
+	//this
+	public void setDetilTransaksi(Set<DetilTransaksi> detilTransaksi) {
+		this.detilTransaksi = detilTransaksi;
+	}
 	
 	public Transaksi(){
 		
 	}
 
 	
-	public Set<Barang> getBarang() {
-		return barang;
-	}
-
-
-	public void setBarang(Set<Barang> barang) {
-		this.barang = barang;
-	}
-
 
 	public Transaksi(int idTransaksi, Pelanggan pelanggan,
 			PegawaiToko pegawaiToko, Toko toko, Date tanggal) {
