@@ -1,5 +1,7 @@
 package id.ac.its.SimplePOS2013.Gudang.ServiceBO;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -23,6 +25,10 @@ public class TokoServiceImpl implements TokoService{
 		baseDao.update(toko);
 	}
 	
+	@Override
+	public List<Toko> daftarToko(){
+		return baseDao.listAll(Toko.class);
+	}
 	
 	public Toko lihatToko(int idToko){
 		return baseDao.view(idToko, Toko.class);
