@@ -13,7 +13,7 @@
         <class>id.ac.its.SimplePOS2013.DataModel.Model.Transaksi</class>
         <properties>
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
-            <property name="hibernate.hbm2ddl.auto" value="validate" />
+            <property name="hibernate.hbm2ddl.auto" value="create" />
             <property name="hibernate.show_sql" value="true" />
             <property name="hibernate.cache.provider_class" value="org.hibernate.cache.HashtableCacheProvider" />
         	
