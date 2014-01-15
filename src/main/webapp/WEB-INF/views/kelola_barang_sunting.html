@@ -3,17 +3,23 @@
 <html>
   
   <head>
-  <div th:include="template::header"></div>
-  <h1>Sunting Barang</h1>
-    <title>New Page</title>
-    <p style="Text-align: center">Halaman ini berguna untuk menyunting barang yang ada digudang</p>
+  	<title>Kelola Barang - Sunting</title>
     <meta name="viewport" content="width=device-width"/>
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css"/>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <style type="text/css">
+      body {
+        padding-top: 40px;
+        padding-bottom: 40px;
+      }
+    </style>
   </head>
   
   <body>
+  	<div th:include="template::header"></div>
+  <h1>Sunting Barang</h1>
+    <p style="Text-align: center">Halaman ini berguna untuk menyunting barang yang ada digudang</p>
     <div class="container">
       <form action="#" th:action="@{/gudang/kelola_barang/sunting}" th:object="${barang}" method="post">
         <div class="form-group">
