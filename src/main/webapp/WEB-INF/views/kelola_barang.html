@@ -3,36 +3,62 @@
 <html>
   
   <head>
-    <title>Kelola barang</title>
-    <meta name="viewport" content="width=device-width"/>
-    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css"/>
+    <title>Kelola Barang</title>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" />
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <style type="text/css">
+      body {
+        padding-top: 40px;
+        padding-bottom: 40px;
+      }
+    </style>
   </head>
   
   <body>
-   <div th:include="template::header"></div>
-    <h1><center><b>Kelola Barang </b></center></h1>
+  <div class="container">
+    <h1> Kelola Barang</h1>
     <div class="container">
       <table class="table">
         <thead>
           <tr>
-            <th>ID Barang</th>
+            <th>ID</th>
             <th>Nama Barang</th>
             <th>Harga Beli</th>
             <th>Harga Jual</th>
             <th>Stok Total Barang</th>
             <th>Tanggal Kadaluarsa</th>
+            <th> </th>
           </tr>
         </thead>
         <tbody>
-          <tr th:each="sb : ${daftarBarang}">
-            <td th:text="${{sb.idBarang}}"></td>
-            <td th:text="${sb.namaBarang}"></td>
-            <td th:text="${sb.hargaBeli}"></td>
-            <td th:text="${sb.hargaJual}"></td>
-            <td th:text="${sb.stokTotalBarang}"></td>
-            <td th:text="${sb.tanggalKadaluarsa}"></td>
+          <tr>
+            <td>1</td>
+            <td>Michael</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><button type="button" class="btn btn-default">Tambah</button> <button type="button" class="btn btn-default">Sunting</button> <button type="button" class="btn btn-default">Hapus</button></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Jake</td>
+            <td>
+            </td>
+            <td>
+            </td>
+            <td>
+            </td>
+            <td>   
+            </td>
+            <td><button type="button" class="btn btn-default">Tambah</button> <button type="button" class="btn btn-default">Sunting</button> <button type="button" class="btn btn-default">Hapus</button></td>
+          </tr>
+          <tr>
+            <td>
+            </td>
+            
           </tr>
         </tbody>
       </table>
@@ -41,18 +67,7 @@
   </body>
   
   <center><footer>
-    <a href ="gudang/kelola_barang_tambah.html" th:href ="@{/gudang/kelola_barang/tambah}" > 
-    <button type="button" class="btn btn-default">Tambah </button> </a>
-    <a href ="gudang/kelola_barang_sunting.html" th:href ="@{/gudang/kelola_barang/sunting}">
-    <button type="button" class="btn btn-default">Sunting</button> </a>
-    <a href ="gudang/kelola_barang_hapus.html" th:href ="@{/gudang/kelola_barang/hapus}">
-    <button type="button" class="btn btn-default">Hapus</button> </a>
-    <a href ="gudang/kelola_barang_tambah_stok.html" th:href ="@{/gudang/kelola_barang/tambah_stok_gudang}">
-    <button type="button" class="btn btn-default">Tambah Stok</button> </a>
-    <a href ="gudang/kelola_barang_kirim_ke_toko.html" th:href ="@{/gudang/kelola_barang/kirim_ke_toko}">
-    <button type="button" class="btn btn-default">Kirim Barang</button></a>
-  	
-  
-  </footer>
-  </center>
+     <button type="button" class="btn btn-default">Tambah Stok</button> <button type="button" class="btn btn-default">Kirim Barang</button>
+  </footer></center>
+
 </html>
