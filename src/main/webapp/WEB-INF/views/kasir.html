@@ -132,7 +132,7 @@
             var kodebarang = $("#kodeBarang").val();
             var quotabarang = $("#quotaBarang").val();
             if(kodebarang == data.idBarang) {
-            	total += quotabarang*data.hargaJual;
+              total += quotabarang*data.hargaJual;
               $("#barang").append("<tr><td>" + data.idBarang + "</td><td>" + data.namaBarang + "</td><td>" + quotabarang + "</td><td>" + quotabarang*data.hargaJual + "</td></tr>");  
               $("#totalHarga").html(total);
               barangDibeli.push(data.idBarang);
@@ -141,23 +141,23 @@
         });
         
         $("#uangBayar").change(function() {
-        	bayarFinal();
+          bayarFinal();
         });
         
         $("#bayarSekarang").click(function() {
-        	transaksi = {"idToko": 1, "idBarang": barangDibeli};
-        	
-        	
-        	$.ajax({
-        		url: /*[[@{/kasir/proses_transaksi}]]*/ ,
-        		type: "POST",
-        		data: JSON.stringify(transaksi),
-        		contentType: "application/json",
-        		dataType: "json",
-        		success: function(data) {
-        			alert(data.tanggal);     
-        		}
-        	});
+          transaksi = {"idToko": 1, "idBarang": barangDibeli};
+          
+          
+          $.ajax({
+            url: /*[[@{/kasir/proses_transaksi}]]*/ ,
+            type: "POST",
+            data: JSON.stringify(transaksi),
+            contentType: "application/json",
+            dataType: "json",
+            success: function(data) {
+              alert(data.tanggal);     
+            }
+          });
         });
       });
 
@@ -179,22 +179,8 @@
     </script>
   
     <div class="container">
-      <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li class="active">
-            <a href="#">Logout</a>
-          </li>
-          <li>
-            <a href="about.html">About</a>
-          </li>
-          <li>
-            <a href="#">Contact</a>
-          </li>
-        </ul>
-        <h3 class="text-muted">Point of Sale</h3>
-      </div>
-      <div class="jumbotron">
-        <h1>Kasir Minimarket</h1>
+      <div class="well">
+        
         <form class="form-inline" role="form">
           <div class="col-xs-6">
             <label class="sr-only" for="exampleInputEmail2">Nama Barang</label>
@@ -211,6 +197,7 @@
         <div class="col-md-9">
           <div class="panel panel-default">
             <table id="barang" class="table table-hover table-striped">
+              <tr><th>ID Barang</th><th>Nama Barang</th><th>Quota</th><th>Total</th></tr>
             </table>
           </div>
           <h4>Keterangan</h4>
@@ -219,17 +206,17 @@
         <div class="col-md-3">
           <div class="row">
             <div class="panel panel-default">
-              <div class="panel-body">
-              	<div class="container">
+              <div class="panel-body text-center">
+                
                 <h1><span id="totalHarga" class="label label-default">Total</span></h1>
-                </div>
+                
               </div>
             </div>
           </div>
           <div class="row">
             <div class="panel panel-default">
               <div class="panel-body">
-              	<div class="container">
+                <div class="container text-center">
                 <button class="btn btn-success" data-toggle="modal" data-target="#myModal">Bayar</button>
                 <!-- Modal -->
                 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
