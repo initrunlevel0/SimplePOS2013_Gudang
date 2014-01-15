@@ -1,10 +1,11 @@
 package id.ac.its.SimplePOS2013.Gudang.ServiceBO;
 
 import id.ac.its.SimplePOS2013.DataModel.DAO.BaseDAO;
+import id.ac.its.SimplePOS2013.DataModel.Model.DetilTransaksi;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-/*
+
 @Service
 public class DetailTransaksiServiceImpl implements DetailTransaksiService{
 	
@@ -18,8 +19,7 @@ public class DetailTransaksiServiceImpl implements DetailTransaksiService{
 	
 	@Override
     public int totalHarga (String idDetailTransaksi){
-    	int total  = 0 ;
-		return total;
+		return 0;
     }
 	@Override
 	public void hitungKembalian (int totalHarga, int uangBayar){
@@ -30,10 +30,7 @@ public class DetailTransaksiServiceImpl implements DetailTransaksiService{
 	public void suntingDetailTransaksi(DetilTransaksi detilTransaksi){
 		baseDao.update(detilTransaksi);
 	}
-	
-	
-    
-    
+
+
 
 }
-*/

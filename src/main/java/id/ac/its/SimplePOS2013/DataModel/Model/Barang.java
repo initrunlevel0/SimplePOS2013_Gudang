@@ -43,16 +43,18 @@ public class Barang{
 	@OneToMany(mappedBy="barang")
 	private Set<StokToko> stokToko;
 	
-	@ManyToMany(mappedBy="barang")
-	@JsonIgnore
-	private Set<Transaksi> transaksi;
+	//this
+	@OneToMany(mappedBy="barang")
+	private Set<DetilTransaksi> detilTransaksi;
 	
-	public Set<Transaksi> getTransaksi() {
-		return transaksi;
+	//this
+	public Set<DetilTransaksi> getDetilTransaksi() {
+		return detilTransaksi;
 	}
 
-	public void setTransaksi(Set<Transaksi> transaksi) {
-		this.transaksi = transaksi;
+	//this
+	public void setTransaksi(Set<DetilTransaksi> detilTransaksi) {
+		this.detilTransaksi = detilTransaksi;
 	}
 	
 	public Barang(){
