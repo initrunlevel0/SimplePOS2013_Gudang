@@ -33,7 +33,7 @@ public class KasirController {
 	
 	
 	// Hardcode dulu
-	private final String idToko = "1";
+	private final int idToko = 1;
 	
 	// Interaksi data JSON
 	// Lihat: http://www.mkyong.com/spring-mvc/spring-3-mvc-and-json-example/
@@ -55,6 +55,7 @@ public class KasirController {
 	// Laman sebenarnya
 	@RequestMapping(value = "/kasir", method = RequestMethod.GET)
 	public String kasirPage(Model model) {
+		model.addAttribute("toko", tokoService.lihatToko(idToko));
 		return "kasir";
 	}
 }
