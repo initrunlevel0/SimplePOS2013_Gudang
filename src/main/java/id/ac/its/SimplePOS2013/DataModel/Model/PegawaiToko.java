@@ -107,13 +107,13 @@ public class PegawaiToko {
 
 
 
-	public String getNlamatPegawaiToko() {
+	public String getAlamatPegawaiToko() {
 		return alamatPegawaiToko;
 	}
 
 
 
-	public void setNlamatPegawaiToko(String nlamatPegawaiToko) {
+	public void setAlamatPegawaiToko(String nlamatPegawaiToko) {
 		this.alamatPegawaiToko = nlamatPegawaiToko;
 	}
 

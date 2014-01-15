@@ -17,8 +17,8 @@ public class PegawaiTokoServiceImpl implements PegawaiTokoService {
 	private BaseDAO<PegawaiToko, String> baseDao;
 
 	@Override
-	public void tambahPegawaiToko(PegawaiToko pegawaitoko) {
-		baseDao.add(pegawaitoko);
+	public void tambahPegawaiToko(PegawaiToko pegawaiToko) {
+		baseDao.add(pegawaiToko);
 	}
 	
 	@Override
@@ -32,13 +32,17 @@ public class PegawaiTokoServiceImpl implements PegawaiTokoService {
 		return true;
 	}
 	
+	@Override
 	public void hapusPegawaiToko(String idPegawaitoko){
 		baseDao.delete(idPegawaitoko, PegawaiToko.class);
 	}
 	
+	@Override
 	public List<PegawaiToko> daftarPegawaiToko(){
 		return baseDao.listAll(PegawaiToko.class);
 	}
+	
+	@Override
 	public PegawaiToko lihatDataPegawaiToko(String idPegawaiToko){
 		return baseDao.view(idPegawaiToko, PegawaiToko.class);
 	}

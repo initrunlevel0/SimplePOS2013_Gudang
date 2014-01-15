@@ -3,26 +3,28 @@
 <html>
   
   <head>
-  <div th:include="template::header"></div>
-  <center><h1> Pegawai Toko Sunting</h1></center>
-  <center><h2>Halaman ini digunakan untuk memberikan fitur tambahan untuk mengubah data pegawai toko yang sudah ada sebelumnya</h2></center>
     <title>Pegawai Toko - Sunting</title>
     <meta name="viewport" content="width=device-width"/>
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css"></link>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <style type="text/css">
+      body {
+        padding-top: 40px;
+        padding-bottom: 40px;
+      }
+    </style>
   </head>
   
   <body>
+  <div th:include="template::header"></div>
+  <center><h1> Pegawai Toko Sunting</h1></center>
+  <p style="Text-align: center">Halaman ini digunakan untuk memberikan fitur tambahan untuk mengubah data pegawai toko yang sudah ada sebelumnya</p>
     <div class="container">
       <form action="#" th:action="@{/gudang/pegawai_toko/sunting}" th:object="${pegawaiToko}" method="post">
         <div class="form-group">
           <label for="exampleInputEmail1">ID Pegawai Toko</label>
-          <input type="email" class="form-control" th:field="*{idPegawaiToko}" placeholder="Masukkan ID Pegawai Toko yang akan di sunting"/>
-        </div>
-        <div class="form-group">
-          <label for="exampleInputPassword1">ID Toko</label>
-          <input type="text" class="form-control" th:field="*{idToko}" placeholder="Masukkan ID Toko yang Baru"/>
+          <input type="email" class="form-control" th:field="*{idPegawai}" placeholder="Masukkan ID Pegawai Toko yang akan di sunting"/>
         </div>
         <div class="form-group">                  
           <label for="exampleInputPassword1">Gaji Pegawai Toko</label>
@@ -38,12 +40,9 @@
         </div>
         <div class="form-group">
           <label for="exampleInputPassword1">Telepon Pegawai Toko</label>
-          <input type="text" class="form-control" th:field="*{teleponPegawaiToko}" placeholder="Masukkan Telepon Pegawai Toko yang Baru"/>
+          <input type="text" class="form-control" th:field="*{neleponPegawaiToko}" placeholder="Masukkan Telepon Pegawai Toko yang Baru"/>
         </div>
-        <div class="form-group">
-          <label for="exampleInputPassword1">Password</label>
-          <input type="password" class="form-control" th:field="*{password}" placeholder="Masukkan Password yang Baru"/>
-        </div>
+        
         <button type="submit" name="suntingBarang" class="btn btn-default">Submit</button>
       </form>
     </div>
