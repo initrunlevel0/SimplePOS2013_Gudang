@@ -4,8 +4,8 @@
   
   <head>
     <title>Welcome to Kasir</title>
-    <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
     <style type="text/css">
@@ -108,9 +108,76 @@
         font-size: 25px;
       }
     </style>
-  </head>
+
+      </head>
   
   <body>
+  <script th:inline="javascript">
+    /*<![CDATA[*/
+      var dataBarang = [];
+      var barangDibeli = [];
+      var total=0;
+
+      $(document).ready(function() {
+        
+        $.get(/*[[@{/kasir/ambil_data_barang}]]*/
+          , null, function(data) {
+          dataBarang = data;
+        }, "json");
+        
+    
+
+        $("#tombolTambahBarang").click(function() {
+          $.each(dataBarang, function(i, data) {
+            var kodebarang = $("#kodeBarang").val();
+            var quotabarang = $("#quotaBarang").val();
+            if(kodebarang == data.idBarang) {
+            	total += quotabarang*data.hargaJual;
+              $("#barang").append("<tr><td>" + data.idBarang + "</td><td>" + data.namaBarang + "</td><td>" + quotabarang + "</td><td>" + quotabarang*data.hargaJual + "</td></tr>");  
+              $("#totalHarga").html(total);
+              barangDibeli.push(data.idBarang);
+            }
+          });
+        });
+        
+        $("#uangBayar").change(function() {
+        	bayarFinal();
+        });
+        
+        $("#bayarSekarang").click(function() {
+        	transaksi = {"idToko": 1, "idBarang": barangDibeli};
+        	
+        	
+        	$.ajax({
+        		url: /*[[@{/kasir/proses_transaksi}]]*/ ,
+        		type: "POST",
+        		data: JSON.stringify(transaksi),
+        		contentType: "application/json",
+        		dataType: "json",
+        		success: function(data) {
+        			alert(data.tanggal);     
+        		}
+        	});
+        });
+      });
+
+      function totalBarang()
+      {  
+        $("#totalHarga").html(total);
+       
+      }
+
+      function bayarFinal()
+      {
+        dibayar=$("#uangBayar").val();
+        total=$("#totalHarga").html();  
+        
+        $("#uangKembalian").val(dibayar - total);
+      }
+      
+      /*]]>*/
+    </script>
+  
     <div class="container">
       <div class="header">
         <ul class="nav nav-pills pull-right">
@@ -131,45 +198,19 @@
         <form class="form-inline" role="form">
           <div class="col-xs-6">
             <label class="sr-only" for="exampleInputEmail2">Nama Barang</label>
-            <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Nama Barang">
+            <input type="text" class="form-control" id="kodeBarang" placeholder="Kode Barang"/>
           </div>
           <div class="col-xs-2">
             <label class="sr-only" for="exampleInputPassword2">Quota</label>
-            <input type="password" class="form-control" id="exampleInputPassword2" placeholder="QTY">
+            <input type="text" class="form-control" id="quotaBarang" placeholder="QTY" />
           </div>
-          <button type="submit" class="btn btn-success">Enter</button>
+          <button type="button" class="btn btn-success" id="tombolTambahBarang" onclick="totalBarang()">Enter</button>
         </form>
       </div>
       <div class="row marketing">
         <div class="col-md-9">
           <div class="panel panel-default">
-            <table class="table table-hover table-striped">
-              <tbody>
-                <tr>
-                  <th>ID Barang</th>
-                  <th>Nama Barang</th>
-                  <th>QTY</th>
-                  <th>Total</th>
-                </tr>
-                <tr>
-                  <td>731631</td>
-                  <td>Oreo</td>
-                  <td>2</td>
-                  <td>5000</td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-              </tbody>
+            <table id="barang" class="table table-hover table-striped">
             </table>
           </div>
           <h4>Keterangan</h4>
@@ -180,7 +221,7 @@
             <div class="panel panel-default">
               <div class="panel-body">
               	<div class="container">
-                <h1><span class="label label-default">Total</span></h1>
+                <h1><span id="totalHarga" class="label label-default">Total</span></h1>
                 </div>
               </div>
             </div>
@@ -191,26 +232,30 @@
               	<div class="container">
                 <button class="btn btn-success" data-toggle="modal" data-target="#myModal">Bayar</button>
                 <!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel">Jumlah Uang</h4>
-      </div>
-      <div class="modal-body">
-        <div class="form-group">
-            <label class="control-label">Uang Yang Dibayar</label>
-            <div class="controls">
-              <input type="text" class="form-control">
-            </div>
-          </div>
-          <a class="btn btn-primary">Bayar</a>
-      </div>
-      
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">Jumlah Uang</h4>
+                      </div>
+                      <div class="modal-body">
+                        <div class="form-group">
+                            <label class="control-label">Uang Yang Dibayar</label>
+                            <div class="controls">
+                              <input id="uangBayar" type="text" class="form-control" />
+                            </div>
+                            <label class="control-label">Uang Kembalian</label>
+                            <div class="controls">
+                              <input id="uangKembalian" type="text" class="form-control"/>
+                            </div>
+                        </div>
+                          <a id="bayarSekarang" class="btn btn-primary">Bayar</a>
+                      </div>
+                      
+                    </div><!-- /.modal-content -->
+                  </div><!-- /.modal-dialog -->
+                </div><!-- /.modal -->
                 </div>
               </div>
             </div>
