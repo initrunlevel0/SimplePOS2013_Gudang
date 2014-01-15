@@ -116,6 +116,7 @@
     /*<![CDATA[*/
       var dataBarang = [];
       var barangDibeli = [];
+      var barangQty = [];
       var total=0;
 
       $(document).ready(function() {
@@ -136,6 +137,7 @@
               $("#barang").append("<tr><td>" + data.idBarang + "</td><td>" + data.namaBarang + "</td><td>" + quotabarang + "</td><td>" + quotabarang*data.hargaJual + "</td></tr>");  
               $("#totalHarga").html(total);
               barangDibeli.push(data.idBarang);
+              barangQty.push(quotaBarang);
             }
           });
         });
@@ -145,7 +147,7 @@
         });
         
         $("#bayarSekarang").click(function() {
-          transaksi = {"idToko": 1, "idBarang": barangDibeli};
+          transaksi = {"idToko": 1, "idBarang": barangDibeli, "barangQty": barangQty};
           
           
           $.ajax({
@@ -180,7 +182,7 @@
   
     <div class="container">
       <div class="well">
-        
+        <h3 class="text-center" th:text="${toko.namaToko}">Toko Tokoan</h3>
         <form class="form-inline" role="form">
           <div class="col-xs-6">
             <label class="sr-only" for="exampleInputEmail2">Nama Barang</label>
