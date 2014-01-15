@@ -3,8 +3,7 @@
 <html>
   
   <head>
-  <h1>Tambah Toko</h1>
-    <title>Tambah Toko</title>
+    <title>Kelola Toko - Tambah</title>
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" />
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -19,6 +18,7 @@
   
   <body>
   <div th:include="template::header"></div>
+  <h1><center>Tambah Toko</center></h1>
     <div class="container">
     <form action="#" th:action="@{/gudang/kelola_toko/tambah}" th:object="${toko}" method="post">
         <div class="form-group">
