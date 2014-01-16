@@ -33,35 +33,16 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>Michael</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Jake</td>
-            <td>
-            </td>
-            <td>
-            </td>
-            <td>
-            </td>
-            <td>   
-            </td>
-            <td>
-            </td>
-          </tr>
-          <tr>
-            <td>
-            </td>
-            
+          <tr th:each="sb : ${daftarBarang}">
+            <td th:text="${sb.idBarang}"></td>
+            <td th:text="${sb.namaBarang}"></td>
+            <td th:text="${sb.hargaBeli}"></td>
+            <td th:text="${sb.hargaJual}"></td>
+          	<td th:text="${sb.stokTotalBarang}"></td>
+          	<td th:text="${sb.tanggalKadaluarsa}"></td>
           </tr>
         </tbody>
+        
       </table>
       
     </div>
